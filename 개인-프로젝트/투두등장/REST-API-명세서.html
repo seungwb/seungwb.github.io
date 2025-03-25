@@ -1,0 +1,2542 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>REST API 명세서</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Quartz 4"/><meta property="og:title" content="REST API 명세서"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="REST API 명세서"/><meta name="twitter:description" content="AUTH 로그인 URL POST : /api/auth/sign-in Header Request NameType (front/ back)RequiredDescriptionemailstring/ String이메일passwordstring/ String패스워드 Response Success NameType (front/ back)RequiredDescriptioncodestring/ String코드messagestring/ String메시지tokenstring/ StringJWTexpirationTimenumber/ intJWT 만료 시..."/><meta property="og:description" content="AUTH 로그인 URL POST : /api/auth/sign-in Header Request NameType (front/ back)RequiredDescriptionemailstring/ String이메일passwordstring/ String패스워드 Response Success NameType (front/ back)RequiredDescriptioncodestring/ String코드messagestring/ String메시지tokenstring/ StringJWTexpirationTimenumber/ intJWT 만료 시..."/><meta property="og:image:alt" content="AUTH 로그인 URL POST : /api/auth/sign-in Header Request NameType (front/ back)RequiredDescriptionemailstring/ String이메일passwordstring/ String패스워드 Response Success NameType (front/ back)RequiredDescriptioncodestring/ String코드messagestring/ String메시지tokenstring/ StringJWTexpirationTimenumber/ intJWT 만료 시..."/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https://quartz.jzhao.xyz/개인-프로젝트/투두등장/REST-API-명세서"/><meta property="twitter:url" content="https://quartz.jzhao.xyz/개인-프로젝트/투두등장/REST-API-명세서"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="AUTH 로그인 URL POST : /api/auth/sign-in Header Request NameType (front/ back)RequiredDescriptionemailstring/ String이메일passwordstring/ String패스워드 Response Success NameType (front/ back)RequiredDescriptioncodestring/ String코드messagestring/ String메시지tokenstring/ StringJWTexpirationTimenumber/ intJWT 만료 시..."/><meta name="generator" content="Quartz"/><link href="../../index.css" rel="stylesheet" type="text/css" spa-preserve/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiRDpcXEJsb2dcXHNldW5nd2IuZ2l0aHViLmlvXFxxdWFydHpcXGNvbXBvbmVudHNcXHN0eWxlcyIsInNvdXJjZXMiOlsibWVybWFpZC5pbmxpbmUuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTs7QUFHRjtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTs7O0FBS0Y7RUFDRTtFQUNBOzs7QUFJSjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFJSjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTs7QUFJRjtFQUNFO0VBQ0E7RUFDQSIsInNvdXJjZXNDb250ZW50IjpbIi5leHBhbmQtYnV0dG9uIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbG9hdDogcmlnaHQ7XG4gIHBhZGRpbmc6IDAuNHJlbTtcbiAgbWFyZ2luOiAwLjNyZW07XG4gIHJpZ2h0OiAwOyAvLyBOT1RFOiByaWdodCB3aWxsIGJlIHNldCBpbiBtZXJtYWlkLmlubGluZS50c1xuICBjb2xvcjogdmFyKC0tZ3JheSk7XG4gIGJvcmRlci1jb2xvcjogdmFyKC0tZGFyayk7XG4gIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgYm9yZGVyOiAxcHggc29saWQ7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgb3BhY2l0eTogMDtcbiAgdHJhbnNpdGlvbjogMC4ycztcblxuICAmID4gc3ZnIHtcbiAgICBmaWxsOiB2YXIoLS1saWdodCk7XG4gICAgZmlsdGVyOiBjb250cmFzdCgwLjMpO1xuICB9XG5cbiAgJjpob3ZlciB7XG4gICAgY3Vyc29yOiBwb2ludGVyO1xuICAgIGJvcmRlci1jb2xvcjogdmFyKC0tc2Vjb25kYXJ5KTtcbiAgfVxuXG4gICY6Zm9jdXMge1xuICAgIG91dGxpbmU6IDA7XG4gIH1cbn1cblxucHJlIHtcbiAgJjpob3ZlciA+IC5leHBhbmQtYnV0dG9uIHtcbiAgICBvcGFjaXR5OiAxO1xuICAgIHRyYW5zaXRpb246IDAuMnM7XG4gIH1cbn1cblxuI21lcm1haWQtY29udGFpbmVyIHtcbiAgcG9zaXRpb246IGZpeGVkO1xuICBjb250YWluOiBsYXlvdXQ7XG4gIHotaW5kZXg6IDk5OTtcbiAgbGVmdDogMDtcbiAgdG9wOiAwO1xuICB3aWR0aDogMTAwdnc7XG4gIGhlaWdodDogMTAwdmg7XG4gIG92ZXJmbG93OiBoaWRkZW47XG4gIGRpc3BsYXk6IG5vbmU7XG4gIGJhY2tkcm9wLWZpbHRlcjogYmx1cig0cHgpO1xuICBiYWNrZ3JvdW5kOiByZ2JhKDAsIDAsIDAsIDAuNSk7XG5cbiAgJi5hY3RpdmUge1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgfVxuXG4gICYgPiAjbWVybWFpZC1zcGFjZSB7XG4gICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1saWdodCk7XG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xuICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICB0b3A6IDUwJTtcbiAgICBsZWZ0OiA1MCU7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7XG4gICAgaGVpZ2h0OiA4MHZoO1xuICAgIHdpZHRoOiA4MHZ3O1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG5cbiAgICAmID4gLm1lcm1haWQtY29udGVudCB7XG4gICAgICBwYWRkaW5nOiAycmVtO1xuICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgICAgdHJhbnNmb3JtLW9yaWdpbjogMCAwO1xuICAgICAgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDAuMXMgZWFzZTtcbiAgICAgIG92ZXJmbG93OiB2aXNpYmxlO1xuICAgICAgbWluLWhlaWdodDogMjAwcHg7XG4gICAgICBtaW4td2lkdGg6IDIwMHB4O1xuXG4gICAgICBwcmUge1xuICAgICAgICBtYXJnaW46IDA7XG4gICAgICAgIGJvcmRlcjogbm9uZTtcbiAgICAgIH1cblxuICAgICAgc3ZnIHtcbiAgICAgICAgbWF4LXdpZHRoOiBub25lO1xuICAgICAgICBoZWlnaHQ6IGF1dG87XG4gICAgICB9XG4gICAgfVxuXG4gICAgJiA+IC5tZXJtYWlkLWNvbnRyb2xzIHtcbiAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgIGJvdHRvbTogMjBweDtcbiAgICAgIHJpZ2h0OiAyMHB4O1xuICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgIGdhcDogOHB4O1xuICAgICAgcGFkZGluZzogOHB4O1xuICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHQpO1xuICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgIGJvcmRlci1yYWRpdXM6IDZweDtcbiAgICAgIGJveC1zaGFkb3c6IDAgMnB4IDRweCByZ2JhKDAsIDAsIDAsIDAuMSk7XG4gICAgICB6LWluZGV4OiAyO1xuXG4gICAgICAubWVybWFpZC1jb250cm9sLWJ1dHRvbiB7XG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgICAgICB3aWR0aDogMzJweDtcbiAgICAgICAgaGVpZ2h0OiAzMnB4O1xuICAgICAgICBwYWRkaW5nOiAwO1xuICAgICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICAgIGNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgICAgICAgYm9yZGVyLXJhZGl1czogNHB4O1xuICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgICAgIGZvbnQtc2l6ZTogMTZweDtcbiAgICAgICAgZm9udC1mYW1pbHk6IHZhcigtLWJvZHlGb250KTtcbiAgICAgICAgdHJhbnNpdGlvbjogYWxsIDAuMnMgZWFzZTtcblxuICAgICAgICAmOmhvdmVyIHtcbiAgICAgICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgICB9XG5cbiAgICAgICAgJjphY3RpdmUge1xuICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgxcHgpO1xuICAgICAgICB9XG5cbiAgICAgICAgLy8gU3R5bGUgdGhlIHJlc2V0IGJ1dHRvbiBkaWZmZXJlbnRseVxuICAgICAgICAmOm50aC1jaGlsZCgyKSB7XG4gICAgICAgICAgd2lkdGg6IGF1dG87XG4gICAgICAgICAgcGFkZGluZzogMCAxMnB4O1xuICAgICAgICAgIGZvbnQtc2l6ZTogMTRweDtcbiAgICAgICAgfVxuICAgICAgfVxuICAgIH1cbiAgfVxufVxuIl19 */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="../../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://quartz.jzhao.xyz/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://quartz.jzhao.xyz/개인-프로젝트/투두등장/REST-API-명세서-og-image.webp"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/개인-프로젝트/투두등장/REST-API-명세서-og-image.webp"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/개인-프로젝트/투두등장/REST-API-명세서-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="개인-프로젝트/투두등장/REST-API-명세서"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../..">Quartz 4</a></h2><div class="spacer mobile-only"></div><div style="display: flex; flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-content"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="explorer-content" aria-expanded="false"><ul class="explorer-ul overflow" id="dnsit2"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../개인-프로젝트/">개인 프로젝트</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../개인-프로젝트/투두등장/">투두등장</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>REST API 명세서</a></div></nav><h1 class="article-title">REST API 명세서</h1><p show-comma="true" class="content-meta"><time datetime="2025-03-25T13:18:40.000Z">Mar 25, 2025</time><span>13 min read</span></p><ul class="tags"><li><a href="../../tags/PJTTODO" class="internal tag-link">PJTTODO</a></li></ul></div></div><article class="popover-hint"><h2 id="auth">AUTH<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#auth" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="로그인">로그인<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#로그인" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="url">URL<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#url" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>POST : /api/auth/sign-in</li>
+</ul>
+<h4 id="header">Header<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#header" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<h4 id="request">Request<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#request" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>email</td><td>string/ String</td><td></td><td>이메일</td></tr><tr><td>password</td><td>string/ String</td><td></td><td>패스워드</td></tr></tbody></table></div>
+<h4 id="response">Response<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#response" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<h5 id="success">Success<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#success" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>code</td><td>string/ String</td><td></td><td>코드</td></tr><tr><td>message</td><td>string/ String</td><td></td><td>메시지</td></tr><tr><td>token</td><td>string/ String</td><td></td><td>JWT</td></tr><tr><td>expirationTime</td><td>number/ int</td><td></td><td>JWT 만료 시간</td></tr></tbody></table></div>
+<pre><code>Https Status - 200 (OK)
+
+{
+	&quot;code&quot;: &quot;SU&quot;,
+	&quot;message&quot;: &quot;Success&quot;,
+	&quot;token&quot;: &quot;vlfdskjhfiweauhklsjdcflkdjshaiweliru&quot;,
+	&quot;expirationTime&quot;: 3600
+}
+</code></pre>
+<h5 id="fail">Fail<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#fail" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>code</td><td>string/ String</td><td></td><td>코드</td></tr><tr><td>message</td><td>string/ String</td><td></td><td>메시지</td></tr></tbody></table></div>
+<pre><code>Https status - 400 (Bad Request)
+
+{
+	&quot;code&quot;: &quot;VF&quot;,
+	&quot;message&quot;: &quot;Validation Failed&quot;
+}
+</code></pre>
+<pre><code>Http status - 401 (Unauthorized)
+
+{
+	&quot;code&quot;: &quot;VF&quot;,
+	&quot;message&quot;: &quot;Validation Failed&quot;
+}
+</code></pre>
+<pre><code>Https status - 500 (Internal Server Error)
+
+{
+	&quot;code&quot;: &quot;DBE&quot;,
+	&quot;message&quot;: &quot;Database error&quot;
+}
+</code></pre>
+<h3 id="회원-가입">회원 가입<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#회원-가입" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="url-1">URL<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#url-1" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>POST : /api/auth/sign-up</li>
+</ul>
+<h4 id="header-1">Header<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#header-1" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<h4 id="request-1">Request<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#request-1" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>email</td><td>string/ String</td><td></td><td>이메일</td></tr><tr><td>password</td><td>string/ String</td><td></td><td>비밀번호</td></tr><tr><td>name</td><td>string/ String</td><td></td><td>이름</td></tr><tr><td>phone</td><td>string/ String</td><td></td><td>전화번호</td></tr></tbody></table></div>
+<h4 id="response-1">Response<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#response-1" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<h5 id="success-1">Success<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#success-1" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>code</td><td>string/ String</td><td></td><td>코드</td></tr><tr><td>message</td><td>string/ String</td><td></td><td>메시지</td></tr></tbody></table></div>
+<pre><code>Https Status - 200 (OK)
+
+{
+	&quot;code&quot;: &quot;SU&quot;,
+	&quot;message&quot;: &quot;Success&quot;,
+	&quot;token&quot;: &quot;vlfdskjhfiweauhklsjdcflkdjshaiweliru&quot;,
+	&quot;expirationTime&quot;: 3600
+}
+</code></pre>
+<h5 id="fail-1">Fail<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#fail-1" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>code</td><td>string/ String</td><td></td><td>코드</td></tr><tr><td>message</td><td>string/ String</td><td></td><td>메시지</td></tr></tbody></table></div>
+<pre><code>Https status - 400 (Bad Request)
+
+{
+	&quot;code&quot;: &quot;DE&quot;,
+	&quot;message&quot;: &quot;Duplicate email.&quot;
+}
+</code></pre>
+<pre><code>Https status - 400 (Bad Request)
+
+{
+	&quot;code&quot;: &quot;DP&quot;,
+	&quot;message&quot;: &quot;Duplicate Phone.&quot;
+}
+</code></pre>
+<pre><code>Https status - 500 (Internal Server Error)
+
+{
+	&quot;code&quot;: &quot;DBE&quot;,
+	&quot;message&quot;: &quot;Database error&quot;
+}
+</code></pre>
+<h2 id="index">Index<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#index" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="오늘의-날씨">오늘의 날씨<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#오늘의-날씨" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="url-2">URL<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#url-2" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>GET : <a href="https://api.openweathermap.org/data/2.5/weather?q=Seoul&amp;appid=$%7BWHETHER_API_KEY%7D&amp;units=metric&amp;lang=kr" class="external">https://api.openweathermap.org/data/2.5/weather?q=Seoul&amp;appid=${WHETHER_API_KEY}&amp;units=metric&amp;lang=kr<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<h4 id="header-2">Header<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#header-2" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<h4 id="request-2">Request<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#request-2" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<h4 id="response-2">Response<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#response-2" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<h5 id="success-2">success<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#success-2" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>coord</td><td>Coord</td><td>*</td><td>좌표 정보</td></tr><tr><td>weather</td><td>Weather[]</td><td>*</td><td>날씨 상태 정보</td></tr><tr><td>main</td><td>Main</td><td>*</td><td>기온 및 기압 정보</td></tr><tr><td>visibility</td><td>number/ Integer</td><td></td><td>가시거리 (미터)</td></tr><tr><td>wind</td><td>Wind</td><td>*</td><td>바람정보</td></tr><tr><td>rain</td><td>Rain</td><td></td><td>강수량 정보</td></tr><tr><td>clouds</td><td>Clouds</td><td>*</td><td>구름 정보</td></tr><tr><td>dt</td><td>number/ Long</td><td>*</td><td>데이터 업데이트 시간</td></tr><tr><td>sys</td><td>Sys</td><td>*</td><td>국가 및 일출/ 일몰 정보</td></tr><tr><td>timezone</td><td>number/ Integer</td><td>*</td><td>타입존</td></tr><tr><td>id</td><td>number/ Long</td><td>*</td><td>도시 ID</td></tr><tr><td>name</td><td>string/ String</td><td>*</td><td>도시 이름</td></tr><tr><td>cod</td><td>number/ Integer</td><td>*</td><td>HTTP 응답 코드</td></tr></tbody></table></div>
+<h5 id="coord">Coord<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#coord" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>lon</td><td>number/ Double</td><td>*</td><td>경도</td></tr><tr><td>lat</td><td>number/ Double</td><td>*</td><td>위도</td></tr></tbody></table></div>
+<h5 id="weather">Weather[]<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#weather" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>number/ Integer</td><td>*</td><td>날씨 코드</td></tr><tr><td>main</td><td>string/ String</td><td>*</td><td>날씨 상태</td></tr><tr><td>description</td><td>string/ String</td><td>*</td><td>상세 설명</td></tr><tr><td>icon</td><td>string/ String</td><td>*</td><td>아이콘 코드</td></tr></tbody></table></div>
+<h5 id="main">Main<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#main" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>temp</td><td>number/ Double</td><td>*</td><td>현재 기온 (°C)</td></tr><tr><td>feels_like</td><td>number/ Double</td><td>*</td><td>체감 온도 (°C)</td></tr><tr><td>temp_min</td><td>number/ Double</td><td>*</td><td>최저 기온 (°C)</td></tr><tr><td>temp_max</td><td>number/ Double</td><td>*</td><td>최고 기온 (°C)</td></tr><tr><td>pressure</td><td>number/ Integer</td><td>*</td><td>기압 (hPa)</td></tr><tr><td>humidity</td><td>number/ Integer</td><td>*</td><td>습도 (%)</td></tr><tr><td>sea_level</td><td>number/ Integer</td><td></td><td>해수면 기압 (hPa)</td></tr><tr><td>grnd_level</td><td>number/ Integer</td><td></td><td>지면 기압 (hPa)</td></tr></tbody></table></div>
+<h5 id="wind">Wind<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#wind" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>speed</td><td>number/ Double</td><td>*</td><td>풍속 (m/s)</td></tr><tr><td>deg</td><td>number/ Integer</td><td>*</td><td>풍향 (도)</td></tr></tbody></table></div>
+<h5 id="rain">Rain<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#rain" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>1h</td><td>number/ Double</td><td></td><td>최근 1시간 강수량 (mm)</td></tr></tbody></table></div>
+<h5 id="clouds">Clouds<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#clouds" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>all</td><td>number/ Integer</td><td>*</td><td>구름량 (%)</td></tr></tbody></table></div>
+<h5 id="sys">Sys<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#sys" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>type</td><td>number/ Integer</td><td></td><td>시스템 유형</td></tr><tr><td>id</td><td>number/ Integer</td><td></td><td>시스템 ID</td></tr><tr><td>country</td><td>string/ String</td><td>*</td><td>국가 코드</td></tr><tr><td>sunrise</td><td>number/ Long</td><td>*</td><td>일출 시간 (UTC)</td></tr><tr><td>sunset</td><td>number/ Long</td><td>*</td><td>일몰 시간 (UTC)</td></tr></tbody></table></div>
+<pre><code>{
+
+    &quot;coord&quot;: {
+
+        &quot;lon&quot;: 126.9778,
+
+        &quot;lat&quot;: 37.5683
+
+    },
+
+    &quot;weather&quot;: [
+
+        {
+
+            &quot;id&quot;: 501,
+
+            &quot;main&quot;: &quot;Rain&quot;,
+
+            &quot;description&quot;: &quot;보통 비&quot;,
+
+            &quot;icon&quot;: &quot;10d&quot;
+
+        }
+
+    ],
+
+    &quot;base&quot;: &quot;stations&quot;,
+
+    &quot;main&quot;: {
+
+        &quot;temp&quot;: 11.76,
+
+        &quot;feels_like&quot;: 10.4,
+
+        &quot;temp_min&quot;: 11.76,
+
+        &quot;temp_max&quot;: 12.78,
+
+        &quot;pressure&quot;: 1016,
+
+        &quot;humidity&quot;: 54,
+
+        &quot;sea_level&quot;: 1016,
+
+        &quot;grnd_level&quot;: 1006
+
+    },
+
+    &quot;visibility&quot;: 8000,
+
+    &quot;wind&quot;: {
+
+        &quot;speed&quot;: 2.06,
+
+        &quot;deg&quot;: 200
+
+    },
+
+    &quot;rain&quot;: {
+
+        &quot;1h&quot;: 1.78
+
+    },
+
+    &quot;clouds&quot;: {
+
+        &quot;all&quot;: 75
+
+    },
+
+    &quot;dt&quot;: 1740808198,
+
+    &quot;sys&quot;: {
+
+        &quot;type&quot;: 1,
+
+        &quot;id&quot;: 8105,
+
+        &quot;country&quot;: &quot;KR&quot;,
+
+        &quot;sunrise&quot;: 1740780248,
+
+        &quot;sunset&quot;: 1740821111
+
+    },
+
+    &quot;timezone&quot;: 32400,
+
+    &quot;id&quot;: 1835848,
+
+    &quot;name&quot;: &quot;Seoul&quot;,
+
+    &quot;cod&quot;: 200
+
+}
+</code></pre>
+<h5 id="fail-2">Fail<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#fail-2" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>cod</td><td>string/ String</td><td></td><td>코드</td></tr><tr><td>message</td><td>string/ String</td><td></td><td>메시지</td></tr></tbody></table></div>
+<pre><code>Https status - 401 (Unauthorized)
+
+{
+	&quot;cod&quot;: 401,
+
+    &quot;message&quot;: &quot;Invalid API key. Please see https://openweathermap.org/faq#error401 for more info.&quot;
+}
+</code></pre>
+<h3 id="오늘의-일정">오늘의 일정<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#오늘의-일정" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="url-3">URL<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#url-3" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>GET : /api/schedule/today?today={today}</li>
+</ul>
+<h4 id="header-3">Header<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#header-3" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>Authorization</td><td>Bearer Token</td></tr></tbody></table></div>
+<h4 id="request-3">Request<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#request-3" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<h4 id="response-3">Response<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#response-3" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<h5 id="success-3">success<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#success-3" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>code</td><td>string/ String</td><td>*</td><td>코드</td></tr><tr><td>message</td><td>string/ String</td><td>*</td><td>메시지</td></tr><tr><td>todayScheduleListItems</td><td>ScheduleListItems[]</td><td>*</td><td>오늘의 일정 리스트 아이템</td></tr></tbody></table></div>
+<h5 id="calendarlistitem">CalendarListItem[]<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#calendarlistitem" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>number/ Long</td><td>*</td><td>글 번호</td></tr><tr><td>name</td><td>string/ String</td><td>*</td><td>작성자</td></tr><tr><td>title</td><td>string/ String</td><td>*</td><td>제목</td></tr><tr><td>content</td><td>string/ String</td><td></td><td>내용</td></tr><tr><td>startDate</td><td>Date/ OffesetDateTime</td><td>*</td><td>일정 시작 시간</td></tr><tr><td>endDate</td><td>Date/ OffesetDateTime</td><td>*</td><td>일정 마감 시간</td></tr><tr><td>regDate</td><td>Date/ OffesetDateTime</td><td>*</td><td>일정 작성 일자</td></tr><tr><td>location</td><td>string/ String</td><td></td><td>장소</td></tr></tbody></table></div>
+<pre><code>Https Status - 200 (OK)
+
+{
+	&quot;code&quot;: &quot;SU&quot;,
+	&quot;message&quot;: &quot;Success&quot;,
+	&quot;scheduleListItems&quot;:[
+		{
+			&quot;id&quot;: 1,
+			&quot;name&quot;: &quot;백철수&quot;,
+			&quot;title&quot;: &quot;코딩 공부&quot;,
+			&quot;content&quot;: &quot;코딩테스트 하기&quot;,
+			&quot;startDate&quot;: &quot;2025-02-12 12:00:00&quot;,
+			&quot;endDate&quot;: &quot;2025-02-12 15:00:00&quot;,
+			&quot;regDate&quot;: &quot;2025-02-11 05:00:00&quot;,
+			&quot;lacation&quot;: &quot;집&quot;
+		},
+		{
+			&quot;id&quot;: 2,
+			&quot;name&quot;: &quot;백철수&quot;,
+			&quot;title&quot;: &quot;친구와 약속&quot;,
+			&quot;content&quot;: &quot;놀기&quot;,
+			&quot;startDate&quot;: &quot;2025-02-12 16:00:00&quot;,
+			&quot;endDate&quot;: &quot;2025-02-12 19:00:00&quot;,
+			&quot;regDate&quot;: &quot;2025-02-11 :00:00&quot;,
+			&quot;lacation&quot;: &quot;집&quot;
+		}
+	]
+}
+</code></pre>
+<h5 id="fail-3">Fail<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#fail-3" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>code</td><td>string/ String</td><td></td><td>코드</td></tr><tr><td>message</td><td>string/ String</td><td></td><td>메시지</td></tr></tbody></table></div>
+<pre><code>Https status - 400 (Bad Request)
+
+{
+	&quot;code&quot;: &quot;VF&quot;,
+	&quot;message&quot;: &quot;Validation Failed&quot;
+}
+</code></pre>
+<pre><code>Https status - 500 (Internal Server Error)
+
+{
+	&quot;code&quot;: &quot;DBE&quot;,
+	&quot;message&quot;: &quot;Database error&quot;
+}
+</code></pre>
+<h3 id="todo-리스트">Todo 리스트<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#todo-리스트" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="url-4">URL<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#url-4" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>GET : /api/todo</li>
+</ul>
+<h4 id="header-4">Header<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#header-4" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>Authorization</td><td>Bearer Token</td></tr></tbody></table></div>
+<h4 id="request-4">Request<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#request-4" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<h4 id="response-4">Response<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#response-4" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<h5 id="success-4">success<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#success-4" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>code</td><td>string/ String</td><td>*</td><td>코드</td></tr><tr><td>message</td><td>string/ String</td><td>*</td><td>메시지</td></tr></tbody></table></div>
+<pre><code>Https Status - 200 (OK)
+
+{
+	&quot;code&quot;: &quot;SU&quot;,
+	&quot;message&quot;: &quot;Success&quot;
+}
+</code></pre>
+<h5 id="fail-4">Fail<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#fail-4" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>code</td><td>string/ String</td><td></td><td>코드</td></tr><tr><td>message</td><td>string/ String</td><td></td><td>메시지</td></tr></tbody></table></div>
+<pre><code>Https status - 400 (Bad Request)
+
+{
+	&quot;code&quot;: &quot;VF&quot;,
+	&quot;message&quot;: &quot;Validation Failed&quot;
+}
+</code></pre>
+<pre><code>Https status - 500 (Internal Server Error)
+
+{
+	&quot;code&quot;: &quot;DBE&quot;,
+	&quot;message&quot;: &quot;Database error&quot;
+}
+</code></pre>
+<h3 id="이번주-일정">이번주 일정<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#이번주-일정" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="url-5">URL<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#url-5" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>GET : /api/schedule/weekly?start={start}&amp;end={end}</li>
+</ul>
+<h4 id="header-5">Header<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#header-5" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>Authorization</td><td>Bearer Token</td></tr></tbody></table></div>
+<h4 id="request-5">Request<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#request-5" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<h4 id="response-5">Response<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#response-5" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<h5 id="success-5">success<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#success-5" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>code</td><td>string/ String</td><td>*</td><td>코드</td></tr><tr><td>message</td><td>string/ String</td><td>*</td><td>메시지</td></tr><tr><td>weeklyScheduleListItems</td><td>ScheduleListItems[]</td><td>*</td><td>이번주 일정 리스트 아이템</td></tr></tbody></table></div>
+<h5 id="calendarlistitem-1">CalendarListItem[]<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#calendarlistitem-1" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>number/ Long</td><td>*</td><td>글 번호</td></tr><tr><td>name</td><td>string/ String</td><td>*</td><td>작성자</td></tr><tr><td>title</td><td>string/ String</td><td>*</td><td>제목</td></tr><tr><td>content</td><td>string/ String</td><td></td><td>내용</td></tr><tr><td>startDate</td><td>Date/ OffesetDateTime</td><td>*</td><td>일정 시작 시간</td></tr><tr><td>endDate</td><td>Date/ OffesetDateTime</td><td>*</td><td>일정 마감 시간</td></tr><tr><td>regDate</td><td>Date/ OffesetDateTime</td><td>*</td><td>일정 작성 일자</td></tr><tr><td>location</td><td>string/ String</td><td></td><td>장소</td></tr></tbody></table></div>
+<pre><code>Https Status - 200 (OK)
+
+{
+	&quot;code&quot;: &quot;SU&quot;,
+	&quot;message&quot;: &quot;Success&quot;,
+	&quot;scheduleListItems&quot;:[
+		{
+			&quot;id&quot;: 1,
+			&quot;name&quot;: &quot;백철수&quot;,
+			&quot;title&quot;: &quot;코딩 공부&quot;,
+			&quot;content&quot;: &quot;코딩테스트 하기&quot;,
+			&quot;startDate&quot;: &quot;2025-02-12 12:00:00&quot;,
+			&quot;endDate&quot;: &quot;2025-02-12 15:00:00&quot;,
+			&quot;regDate&quot;: &quot;2025-02-11 05:00:00&quot;,
+			&quot;lacation&quot;: &quot;집&quot;
+		},
+		{
+			&quot;id&quot;: 2,
+			&quot;name&quot;: &quot;백철수&quot;,
+			&quot;title&quot;: &quot;친구와 약속&quot;,
+			&quot;content&quot;: &quot;놀기&quot;,
+			&quot;startDate&quot;: &quot;2025-02-12 16:00:00&quot;,
+			&quot;endDate&quot;: &quot;2025-02-12 19:00:00&quot;,
+			&quot;regDate&quot;: &quot;2025-02-11 :00:00&quot;,
+			&quot;lacation&quot;: &quot;집&quot;
+		},
+		{
+			&quot;id&quot;: 3,
+			&quot;name&quot;: &quot;백철수&quot;,
+			&quot;title&quot;: &quot;결혼식&quot;,
+			&quot;content&quot;: &quot;&quot;,
+			&quot;startDate&quot;: &quot;2025-02-14 16:00:00&quot;,
+			&quot;endDate&quot;: &quot;2025-02-14 19:00:00&quot;,
+			&quot;regDate&quot;: &quot;2025-02-01 :00:00&quot;,
+			&quot;lacation&quot;: &quot;서울울&quot;
+		}
+	]
+}
+</code></pre>
+<h5 id="fail-5">Fail<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#fail-5" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>code</td><td>string/ String</td><td></td><td>코드</td></tr><tr><td>message</td><td>string/ String</td><td></td><td>메시지</td></tr></tbody></table></div>
+<pre><code>Https status - 400 (Bad Request)
+
+{
+	&quot;code&quot;: &quot;VF&quot;,
+	&quot;message&quot;: &quot;Validation Failed&quot;
+}
+</code></pre>
+<pre><code>Https status - 500 (Internal Server Error)
+
+{
+	&quot;code&quot;: &quot;DBE&quot;,
+	&quot;message&quot;: &quot;Database error&quot;
+}
+</code></pre>
+<h2 id="schedule">Schedule<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#schedule" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="일정-리스트-조회">일정 리스트 조회<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#일정-리스트-조회" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="url-6">URL<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#url-6" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>GET : /api/schedule</li>
+</ul>
+<h4 id="header-6">Header<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#header-6" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>Authorization</td><td>Bearer Token</td></tr></tbody></table></div>
+<h4 id="request-6">Request<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#request-6" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<h4 id="response-6">Response<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#response-6" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<h5 id="success-6">success<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#success-6" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>code</td><td>string/ String</td><td>*</td><td>코드</td></tr><tr><td>message</td><td>string/ String</td><td>*</td><td>메시지</td></tr><tr><td>scheduleListItems</td><td>ScheduleListItems[]</td><td>*</td><td>일정 리스트 아이템</td></tr></tbody></table></div>
+<h5 id="calendarlistitem-2">CalendarListItem[]<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#calendarlistitem-2" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>number/ Long</td><td>*</td><td>글 번호</td></tr><tr><td>name</td><td>string/ String</td><td>*</td><td>작성자</td></tr><tr><td>title</td><td>string/ String</td><td>*</td><td>제목</td></tr><tr><td>content</td><td>string/ String</td><td></td><td>내용</td></tr><tr><td>startDate</td><td>Date/ OffesetDateTime</td><td>*</td><td>일정 시작 시간</td></tr><tr><td>endDate</td><td>Date/ OffesetDateTime</td><td>*</td><td>일정 마감 시간</td></tr><tr><td>regDate</td><td>Date/ OffesetDateTime</td><td>*</td><td>일정 작성 일자</td></tr><tr><td>location</td><td>string/ String</td><td></td><td>장소</td></tr></tbody></table></div>
+<pre><code>Https Status - 200 (OK)
+
+{
+	&quot;code&quot;: &quot;SU&quot;,
+	&quot;message&quot;: &quot;Success&quot;,
+	&quot;scheduleListItems&quot;:[
+		{
+			&quot;id&quot;: 1,
+			&quot;name&quot;: &quot;백철수&quot;,
+			&quot;title&quot;: &quot;코딩 공부&quot;,
+			&quot;content&quot;: &quot;코딩테스트 하기&quot;,
+			&quot;startDate&quot;: &quot;2025-02-12 12:00:00&quot;,
+			&quot;endDate&quot;: &quot;2025-02-12 15:00:00&quot;,
+			&quot;regDate&quot;: &quot;2025-02-11 05:00:00&quot;,
+			&quot;lacation&quot;: &quot;집&quot;
+		}
+	]
+}
+</code></pre>
+<h5 id="fail-6">Fail<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#fail-6" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>code</td><td>string/ String</td><td></td><td>코드</td></tr><tr><td>message</td><td>string/ String</td><td></td><td>메시지</td></tr></tbody></table></div>
+<pre><code>Https status - 400 (Bad Request)
+
+{
+	&quot;code&quot;: &quot;VF&quot;,
+	&quot;message&quot;: &quot;Validation Failed&quot;
+}
+</code></pre>
+<pre><code>Https status - 500 (Internal Server Error)
+
+{
+	&quot;code&quot;: &quot;DBE&quot;,
+	&quot;message&quot;: &quot;Database error&quot;
+}
+</code></pre>
+<h3 id="일정-리스트-저장">일정 리스트 저장<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#일정-리스트-저장" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="url-7">URL<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#url-7" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>POST : /api/schedule</li>
+</ul>
+<h4 id="header-7">Header<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#header-7" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>Authorization</td><td>Bearer Token</td></tr></tbody></table></div>
+<h4 id="request-7">Request<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#request-7" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>title</td><td>string/ String</td><td>*</td><td>제목</td></tr><tr><td>content</td><td>string/ String</td><td></td><td>내용</td></tr><tr><td>location</td><td>string/ String</td><td></td><td>장소</td></tr><tr><td>startDate</td><td>Date/ OffsetDateTime</td><td>*</td><td>시작 시간</td></tr><tr><td>endDate</td><td>Date/ OffsetDateTime</td><td>*</td><td>마감 시간</td></tr></tbody></table></div>
+<h4 id="response-7">Response<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#response-7" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<h5 id="success-7">success<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#success-7" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>code</td><td>string/ String</td><td>*</td><td>코드</td></tr><tr><td>message</td><td>string/ String</td><td>*</td><td>메시지</td></tr></tbody></table></div>
+<pre><code>Https Status - 200 (OK)
+
+{
+	&quot;code&quot;: &quot;SU&quot;,
+	&quot;message&quot;: &quot;Success&quot;
+}
+</code></pre>
+<h5 id="fail-7">Fail<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#fail-7" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>code</td><td>string/ String</td><td></td><td>코드</td></tr><tr><td>message</td><td>string/ String</td><td></td><td>메시지</td></tr></tbody></table></div>
+<pre><code>Https status - 400 (Bad Request)
+
+{
+	&quot;code&quot;: &quot;VF&quot;,
+	&quot;message&quot;: &quot;Validation Failed&quot;
+}
+</code></pre>
+<pre><code>Https status - 401 (Unauthorized)
+
+{
+	&quot;code&quot;: &quot;NU&quot;,
+	&quot;message&quot;: &quot;This user does not exist.&quot;
+}
+</code></pre>
+<pre><code>Https status - 500 (Internal Server Error)
+
+{
+	&quot;code&quot;: &quot;DBE&quot;,
+	&quot;message&quot;: &quot;Database error&quot;
+}
+</code></pre>
+<h3 id="일정-리스트-수정">일정 리스트 수정<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#일정-리스트-수정" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="url-8">URL<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#url-8" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>PUT : /api/schedule/{id}</li>
+</ul>
+<h4 id="header-8">Header<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#header-8" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>Authorization</td><td>Bearer Token</td></tr></tbody></table></div>
+<h4 id="request-8">Request<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#request-8" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>title</td><td>string/ String</td><td>*</td><td>제목</td></tr><tr><td>content</td><td>string/ String</td><td></td><td>내용</td></tr><tr><td>location</td><td>string/ String</td><td></td><td>장소</td></tr><tr><td>startDate</td><td>Date/ OffsetDateTime</td><td>*</td><td>시작 시간</td></tr><tr><td>endDate</td><td>Date/ OffsetDateTime</td><td>*</td><td>마감 시간</td></tr></tbody></table></div>
+<h4 id="response-8">Response<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#response-8" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<h5 id="success-8">success<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#success-8" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>code</td><td>string/ String</td><td>*</td><td>코드</td></tr><tr><td>message</td><td>string/ String</td><td>*</td><td>메시지</td></tr></tbody></table></div>
+<pre><code>Https Status - 200 (OK)
+
+{
+	&quot;code&quot;: &quot;SU&quot;,
+	&quot;message&quot;: &quot;Success&quot;
+}
+</code></pre>
+<h5 id="fail-8">Fail<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#fail-8" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>code</td><td>string/ String</td><td></td><td>코드</td></tr><tr><td>message</td><td>string/ String</td><td></td><td>메시지</td></tr></tbody></table></div>
+<pre><code>Https status - 400 (Bad Request)
+
+{
+	&quot;code&quot;: &quot;VF&quot;,
+	&quot;message&quot;: &quot;Validation Failed&quot;
+}
+</code></pre>
+<pre><code>Https status - 401 (Unauthorized)
+
+{
+	&quot;code&quot;: &quot;NU&quot;,
+	&quot;message&quot;: &quot;This user does not exist.&quot;
+}
+</code></pre>
+<pre><code>Https status - 401 (Unauthorized)
+
+{
+	&quot;code&quot;: &quot;NS&quot;,
+	&quot;message&quot;: &quot;This Schedule does not exist.&quot;
+}
+</code></pre>
+<pre><code>Https status - 500 (Internal Server Error)
+
+{
+	&quot;code&quot;: &quot;DBE&quot;,
+	&quot;message&quot;: &quot;Database error&quot;
+}
+</code></pre>
+<h3 id="일정-리스트-삭제">일정 리스트 삭제<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#일정-리스트-삭제" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="url-9">URL<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#url-9" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>DELETE : /api/schedule/{id}</li>
+</ul>
+<h4 id="header-9">Header<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#header-9" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>Authorization</td><td>Bearer Token</td></tr></tbody></table></div>
+<h4 id="request-9">Request<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#request-9" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<h4 id="response-9">Response<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#response-9" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<h5 id="success-9">success<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#success-9" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>code</td><td>string/ String</td><td>*</td><td>코드</td></tr><tr><td>message</td><td>string/ String</td><td>*</td><td>메시지</td></tr></tbody></table></div>
+<pre><code>Https Status - 200 (OK)
+
+{
+	&quot;code&quot;: &quot;SU&quot;,
+	&quot;message&quot;: &quot;Success&quot;
+}
+</code></pre>
+<h5 id="fail-9">Fail<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#fail-9" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>code</td><td>string/ String</td><td></td><td>코드</td></tr><tr><td>message</td><td>string/ String</td><td></td><td>메시지</td></tr></tbody></table></div>
+<pre><code>Https status - 400 (Bad Request)
+
+{
+	&quot;code&quot;: &quot;VF&quot;,
+	&quot;message&quot;: &quot;Validation Failed&quot;
+}
+</code></pre>
+<pre><code>Https status - 401 (Unauthorized)
+
+{
+	&quot;code&quot;: &quot;NU&quot;,
+	&quot;message&quot;: &quot;This user does not exist.&quot;
+}
+</code></pre>
+<pre><code>Https status - 401 (Unauthorized)
+
+{
+	&quot;code&quot;: &quot;NS&quot;,
+	&quot;message&quot;: &quot;This Schedule does not exist.&quot;
+}
+</code></pre>
+<pre><code>Https status - 500 (Internal Server Error)
+
+{
+	&quot;code&quot;: &quot;DBE&quot;,
+	&quot;message&quot;: &quot;Database error&quot;
+}
+</code></pre>
+<h2 id="할일-목록">할일 목록<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#할일-목록" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="할일-조회">할일 조회<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#할일-조회" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="url-10">URL<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#url-10" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>GET : /api/todo</li>
+</ul>
+<h4 id="header-10">Header<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#header-10" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>Authorization</td><td>Bearer Token</td></tr></tbody></table></div>
+<h4 id="request-10">Request<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#request-10" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<h4 id="response-10">Response<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#response-10" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<h5 id="success-10">success<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#success-10" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>code</td><td>string/ String</td><td>*</td><td>코드</td></tr><tr><td>message</td><td>string/ String</td><td>*</td><td>메시지</td></tr><tr><td>todoListItems</td><td>TodoListItems[]</td><td>*</td><td>할일 리스트</td></tr></tbody></table></div>
+<h5 id="todolistitems">TodoListItems[]<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#todolistitems" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>id</td><td>number/ Long</td><td>*</td><td>할일 번호</td></tr><tr><td>title</td><td>string/ String</td><td>*</td><td>제목</td></tr><tr><td>content</td><td>string/ String</td><td></td><td>내용</td></tr><tr><td>regDate</td><td>Date/ OffesetDateTime</td><td>*</td><td>할일 작성 일자</td></tr><tr><td>state</td><td>boolean/ Boolean</td><td>*</td><td>상태</td></tr><tr><td>memberId</td><td>number/ Long</td><td>*</td><td>작성자 ID</td></tr></tbody></table></div>
+<pre><code>Https Status - 200 (OK)
+
+{
+	&quot;code&quot;: &quot;SU&quot;,
+	&quot;message&quot;: &quot;Success&quot;,
+	&quot;todoListItems&quot;:[
+		{
+			&quot;id&quot;: 1,
+			&quot;title&quot;: &quot;청소하기&quot;,
+			&quot;content&quot;: &quot;내방&quot;,
+			&quot;regDate&quot;: &quot;2025-02-27 12:00:00&quot;,
+			&quot;state&quot;: true,
+			&quot;memberId&quot;: 1
+		}
+	]
+}
+</code></pre>
+<h5 id="fail-10">Fail<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#fail-10" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>code</td><td>string/ String</td><td></td><td>코드</td></tr><tr><td>message</td><td>string/ String</td><td></td><td>메시지</td></tr></tbody></table></div>
+<pre><code>Https status - 400 (Bad Request)
+
+{
+	&quot;code&quot;: &quot;VF&quot;,
+	&quot;message&quot;: &quot;Validation Failed&quot;
+}
+</code></pre>
+<pre><code>Https status - 401 (Unauthorized)
+
+{
+	&quot;code&quot;: &quot;NU&quot;,
+	&quot;message&quot;: &quot;This user does not exist.&quot;
+}
+</code></pre>
+<pre><code>Https status - 500 (Internal Server Error)
+
+{
+	&quot;code&quot;: &quot;DBE&quot;,
+	&quot;message&quot;: &quot;Database error&quot;
+}
+</code></pre>
+<h3 id="할일-저장">할일 저장<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#할일-저장" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="url-11">URL<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#url-11" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>POST : /api/todo</li>
+</ul>
+<h4 id="header-11">Header<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#header-11" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>Authorization</td><td>Bearer Token</td></tr></tbody></table></div>
+<h4 id="request-11">Request<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#request-11" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>title</td><td>string/ String</td><td>*</td><td>제목</td></tr><tr><td>content</td><td>string/ String</td><td></td><td>내용</td></tr></tbody></table></div>
+<pre><code>{
+	&quot;title&quot;: &quot;청소하기&quot;,
+	&quot;content&quot;: &quot;내방&quot;
+}
+</code></pre>
+<h4 id="response-11">Response<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#response-11" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<h5 id="success-11">success<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#success-11" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>code</td><td>string/ String</td><td>*</td><td>코드</td></tr><tr><td>message</td><td>string/ String</td><td>*</td><td>메시지</td></tr></tbody></table></div>
+<pre><code>Https Status - 200 (OK)
+
+{
+	&quot;code&quot;: &quot;SU&quot;,
+	&quot;message&quot;: &quot;Success&quot;
+}
+</code></pre>
+<h5 id="fail-11">Fail<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#fail-11" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>code</td><td>string/ String</td><td></td><td>코드</td></tr><tr><td>message</td><td>string/ String</td><td></td><td>메시지</td></tr></tbody></table></div>
+<pre><code>Https status - 400 (Bad Request)
+
+{
+	&quot;code&quot;: &quot;VF&quot;,
+	&quot;message&quot;: &quot;Validation Failed&quot;
+}
+</code></pre>
+<pre><code>Https status - 401 (Unauthorized)
+
+{
+	&quot;code&quot;: &quot;NU&quot;,
+	&quot;message&quot;: &quot;This user does not exist.&quot;
+}
+</code></pre>
+<pre><code>Https status - 500 (Internal Server Error)
+
+{
+	&quot;code&quot;: &quot;DBE&quot;,
+	&quot;message&quot;: &quot;Database error&quot;
+}
+</code></pre>
+<h3 id="할일-수정">할일 수정<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#할일-수정" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="url-12">URL<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#url-12" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>PUT : /api/todo/{id}</li>
+</ul>
+<h4 id="header-12">Header<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#header-12" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>Authorization</td><td>Bearer Token</td></tr></tbody></table></div>
+<h4 id="request-12">Request<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#request-12" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>title</td><td>string/ String</td><td>*</td><td>제목</td></tr><tr><td>content</td><td>string/ String</td><td></td><td>내용</td></tr></tbody></table></div>
+<pre><code>{
+	&quot;title&quot;: &quot;청소하기&quot;,
+	&quot;content&quot;: &quot;내방&quot;
+}
+</code></pre>
+<h4 id="response-12">Response<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#response-12" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<h5 id="success-12">success<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#success-12" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>code</td><td>string/ String</td><td>*</td><td>코드</td></tr><tr><td>message</td><td>string/ String</td><td>*</td><td>메시지</td></tr></tbody></table></div>
+<pre><code>Https Status - 200 (OK)
+
+{
+	&quot;code&quot;: &quot;SU&quot;,
+	&quot;message&quot;: &quot;Success&quot;
+}
+</code></pre>
+<h5 id="fail-12">Fail<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#fail-12" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>code</td><td>string/ String</td><td></td><td>코드</td></tr><tr><td>message</td><td>string/ String</td><td></td><td>메시지</td></tr></tbody></table></div>
+<pre><code>Https status - 400 (Bad Request)
+
+{
+	&quot;code&quot;: &quot;VF&quot;,
+	&quot;message&quot;: &quot;Validation Failed&quot;
+}
+</code></pre>
+<pre><code>Https status - 401 (Unauthorized)
+
+{
+	&quot;code&quot;: &quot;NU&quot;,
+	&quot;message&quot;: &quot;This user does not exist.&quot;
+}
+</code></pre>
+<pre><code>Https status - 401 (Unauthorized)
+
+{
+	&quot;code&quot;: &quot;NT&quot;,
+	&quot;message&quot;: &quot;This Todo does not exist.&quot;
+}
+</code></pre>
+<pre><code>Https status - 500 (Internal Server Error)
+
+{
+	&quot;code&quot;: &quot;DBE&quot;,
+	&quot;message&quot;: &quot;Database error&quot;
+}
+</code></pre>
+<h3 id="할일-상태-수정">할일 상태 수정<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#할일-상태-수정" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="url-13">URL<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#url-13" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>PUT : /api/todo/toggle/{id}</li>
+</ul>
+<h4 id="header-13">Header<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#header-13" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>Authorization</td><td>Bearer Token</td></tr></tbody></table></div>
+<h4 id="request-13">Request<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#request-13" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>state</td><td>boolean/ Boolean</td><td>*</td><td>상태</td></tr></tbody></table></div>
+<pre><code>{
+	&quot;state&quot;: false
+}
+</code></pre>
+<h4 id="response-13">Response<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#response-13" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<h5 id="success-13">success<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#success-13" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>code</td><td>string/ String</td><td>*</td><td>코드</td></tr><tr><td>message</td><td>string/ String</td><td>*</td><td>메시지</td></tr></tbody></table></div>
+<pre><code>Https Status - 200 (OK)
+
+{
+	&quot;code&quot;: &quot;SU&quot;,
+	&quot;message&quot;: &quot;Success&quot;
+}
+</code></pre>
+<h5 id="fail-13">Fail<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#fail-13" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>code</td><td>string/ String</td><td></td><td>코드</td></tr><tr><td>message</td><td>string/ String</td><td></td><td>메시지</td></tr></tbody></table></div>
+<pre><code>Https status - 400 (Bad Request)
+
+{
+	&quot;code&quot;: &quot;VF&quot;,
+	&quot;message&quot;: &quot;Validation Failed&quot;
+}
+</code></pre>
+<pre><code>Https status - 401 (Unauthorized)
+
+{
+	&quot;code&quot;: &quot;NU&quot;,
+	&quot;message&quot;: &quot;This user does not exist.&quot;
+}
+</code></pre>
+<pre><code>Https status - 401 (Unauthorized)
+
+{
+	&quot;code&quot;: &quot;NT&quot;,
+	&quot;message&quot;: &quot;This Todo does not exist.&quot;
+}
+</code></pre>
+<pre><code>Https status - 500 (Internal Server Error)
+
+{
+	&quot;code&quot;: &quot;DBE&quot;,
+	&quot;message&quot;: &quot;Database error&quot;
+}
+</code></pre>
+<h3 id="할일-삭제">할일 삭제<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#할일-삭제" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="url-14">URL<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#url-14" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<ul>
+<li>DELETE : /api/todo/{id}</li>
+</ul>
+<h4 id="header-14">Header<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#header-14" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>Authorization</td><td>Bearer Token</td></tr></tbody></table></div>
+<h4 id="request-14">Request<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#request-14" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<h4 id="response-14">Response<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#response-14" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<h5 id="success-14">success<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#success-14" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>code</td><td>string/ String</td><td>*</td><td>코드</td></tr><tr><td>message</td><td>string/ String</td><td>*</td><td>메시지</td></tr></tbody></table></div>
+<pre><code>Https Status - 200 (OK)
+
+{
+	&quot;code&quot;: &quot;SU&quot;,
+	&quot;message&quot;: &quot;Success&quot;
+}
+</code></pre>
+<h5 id="fail-14">Fail<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#fail-14" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Name</th><th>Type (front/ back)</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td>code</td><td>string/ String</td><td></td><td>코드</td></tr><tr><td>message</td><td>string/ String</td><td></td><td>메시지</td></tr></tbody></table></div>
+<pre><code>Https status - 400 (Bad Request)
+
+{
+	&quot;code&quot;: &quot;VF&quot;,
+	&quot;message&quot;: &quot;Validation Failed&quot;
+}
+</code></pre>
+<pre><code>Https status - 401 (Unauthorized)
+
+{
+	&quot;code&quot;: &quot;NU&quot;,
+	&quot;message&quot;: &quot;This user does not exist.&quot;
+}
+</code></pre>
+<pre><code>Https status - 401 (Unauthorized)
+
+{
+	&quot;code&quot;: &quot;NT&quot;,
+	&quot;message&quot;: &quot;This Todo does not exist.&quot;
+}
+</code></pre>
+<pre><code>Https status - 500 (Internal Server Error)
+
+{
+	&quot;code&quot;: &quot;DBE&quot;,
+	&quot;message&quot;: &quot;Database error&quot;
+}
+</code></pre></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-content" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="toc-content"><ul id="i19ov4" class="overflow"><li class="depth-0"><a href="#auth" data-for="auth">AUTH</a></li><li class="depth-1"><a href="#로그인" data-for="로그인">로그인</a></li><li class="depth-1"><a href="#회원-가입" data-for="회원-가입">회원 가입</a></li><li class="depth-0"><a href="#index" data-for="index">Index</a></li><li class="depth-1"><a href="#오늘의-날씨" data-for="오늘의-날씨">오늘의 날씨</a></li><li class="depth-1"><a href="#오늘의-일정" data-for="오늘의-일정">오늘의 일정</a></li><li class="depth-1"><a href="#todo-리스트" data-for="todo-리스트">Todo 리스트</a></li><li class="depth-1"><a href="#이번주-일정" data-for="이번주-일정">이번주 일정</a></li><li class="depth-0"><a href="#schedule" data-for="schedule">Schedule</a></li><li class="depth-1"><a href="#일정-리스트-조회" data-for="일정-리스트-조회">일정 리스트 조회</a></li><li class="depth-1"><a href="#일정-리스트-저장" data-for="일정-리스트-저장">일정 리스트 저장</a></li><li class="depth-1"><a href="#일정-리스트-수정" data-for="일정-리스트-수정">일정 리스트 수정</a></li><li class="depth-1"><a href="#일정-리스트-삭제" data-for="일정-리스트-삭제">일정 리스트 삭제</a></li><li class="depth-0"><a href="#할일-목록" data-for="할일-목록">할일 목록</a></li><li class="depth-1"><a href="#할일-조회" data-for="할일-조회">할일 조회</a></li><li class="depth-1"><a href="#할일-저장" data-for="할일-저장">할일 저장</a></li><li class="depth-1"><a href="#할일-수정" data-for="할일-수정">할일 수정</a></li><li class="depth-1"><a href="#할일-상태-수정" data-for="할일-상태-수정">할일 상태 수정</a></li><li class="depth-1"><a href="#할일-삭제" data-for="할일-삭제">할일 삭제</a></li><li class="overflow-end"></li></ul></div></div><div class="backlinks"><h3>Backlinks</h3><ul id="yl8iev" class="overflow"><li><a href="../../개인-프로젝트/투두등장/아키텍처-설계" class="internal">아키텍처 설계</a></li><li><a href="../../개인-프로젝트/투두등장/투두등장" class="internal">투두등장</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.5.0</a> © 2025</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function o(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=e+"px";let c=t,l=t.parentElement;for(;l;){if(!l.classList.contains("callout"))return;let i=l.classList.contains("is-collapsed")?l.scrollHeight:l.scrollHeight+c.scrollHeight;l.style.maxHeight=i+"px",c=l,l=l.parentElement}}function n(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let e=s.firstElementChild;if(!e)continue;e.addEventListener("click",o),window.addCleanup(()=>e.removeEventListener("click",o));let l=s.classList.contains("is-collapsed")?e.scrollHeight:s.scrollHeight;s.style.maxHeight=l+"px"}}document.addEventListener("nav",n);
+</script><script type="module">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="../../postscript.js" type="module"></script></html>
