@@ -483,18 +483,27 @@ p {
   overflow-x: auto;
 
   & > table {
-    margin: 1rem;
+    width: 100%;
+    margin: 1rem auto;
     padding: 1.5rem;
     border-collapse: collapse;
+    table-layout: fixed;  // ✅ 핵심!
+  }
 
-    th,
-    td {
-      min-width: 75px;
-    }
+  th,
+  td {
+    padding: 0.75rem;
+    text-align: center;
+  }
 
-    & > * {
-      line-height: 2rem;
-    }
+  th:first-child,
+  td:first-child {
+    width: 30%;           // ✅ 제목 열 너비 고정
+  }
+
+  th:last-child,
+  td:last-child {
+    width: 70%;           // ✅ 내용 열 너비 고정
   }
 }
 
