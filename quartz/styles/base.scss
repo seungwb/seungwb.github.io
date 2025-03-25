@@ -483,7 +483,7 @@ p {
   overflow-x: auto;
 
   & > table {
-    width: 100%;
+    width: 90%;
     margin: 1rem auto;
     padding: 1.5rem;
     border-collapse: collapse;
@@ -493,7 +493,6 @@ p {
   th,
   td {
     padding: 0.75rem;
-    text-align: center;
   }
 
   th:first-child,
