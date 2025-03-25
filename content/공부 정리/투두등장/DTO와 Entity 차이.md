@@ -1,3 +1,8 @@
+---
+tags:
+  - "#PJTStudyTodo"
+---
+
 ### Entity
 - JPA에서 관리하는 객체로, 데이터베이스 테이블과 직접 연결 된다.
 - DB를 변경하면 Entity도 변경된다.

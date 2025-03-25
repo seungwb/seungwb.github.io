@@ -1,5 +1,6 @@
 ---
-dg-publish: true
+tags:
+  - "#PJTTODO"
 ---
 
 ## AUTH

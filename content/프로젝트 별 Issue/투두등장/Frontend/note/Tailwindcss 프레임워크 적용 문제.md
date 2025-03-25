@@ -1,3 +1,9 @@
+---
+tags:
+  - "#TodoIssueFront"
+  - "#tailwind"
+---
+
 - 이번 프로젝트는 Tailwind 사용해보기 위해 아래와 같이 명령어를 실행했다.
 ```sh
 # Tailwind 설치

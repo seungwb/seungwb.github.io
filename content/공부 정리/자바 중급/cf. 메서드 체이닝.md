@@ -1,3 +1,8 @@
+---
+tags:
+  - "#JavaMid"
+---
+
 - 객체가 자신을 반환하여 연속적으로 메서드를 호출할 수 있도록 설계된 방식
 ```java
 public class ValueAdder {  

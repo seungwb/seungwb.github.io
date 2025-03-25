@@ -1,3 +1,8 @@
+---
+tags:
+  - "#PJTStudyTodo"
+---
+
 ### CORS 란?
 - Cross-Origin Resource Sharing 의 약자로 다른 도메인 간의 리소스 요청을 허용하거나 차단하는 **보안 정책**이다.
 - 웹 브라우저는 기본적으로 동일 출처 정책 (Same-Origin Policy)을 적용해서 다른 도메인에서 온 요청을 차단한다. 그래서 **API 서버와 프론트엔드가 다른 도메인에서 운영되는 경우**, CORS를 설정해서 이를 허용해야 한다.

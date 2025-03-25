@@ -1,4 +1,9 @@
-#ETCStudy 
+---
+tags:
+  - "#ETCStudy"
+content:
+---
+
 
 ```dataviewjs
 const currentFile = dv.current();

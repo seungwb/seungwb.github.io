@@ -1,3 +1,10 @@
+---
+tags:
+  - GinongIssueBack
+  - "#Java"
+  - "#sql"
+  - "#db"
+---
 
 admin/product/reg 페이지 작성 중 post요청으로 페이지에 값을 받은 후 Product테이블에 상품을 등록하고 이 Product 테이블에 Auto increment 로 생성된 id값을 Stock 에 product_id를 FK로 등록해야 하는데 자동으로 생성되는 값이라 방법을 찾아 봄 
 

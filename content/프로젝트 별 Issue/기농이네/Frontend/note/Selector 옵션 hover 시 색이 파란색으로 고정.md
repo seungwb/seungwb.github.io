@@ -1,3 +1,10 @@
+---
+tags:
+  - "#GinongIssueFront"
+  - "#html"
+  - "#Javascript"
+  - "#css"
+---
 
 옵션을 선택하여 선택한 데이터를 post요청에 담아 controller로 보내기 위해 selector 구문을 사용하기로 했지만 옵션 hover 시 파란색으로 고정되어 있음.
 

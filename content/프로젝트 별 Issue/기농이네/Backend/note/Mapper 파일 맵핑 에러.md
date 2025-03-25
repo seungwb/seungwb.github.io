@@ -1,3 +1,10 @@
+---
+tags:
+  - GinongIssueBack
+  - "#Java"
+  - "#mybatis"
+---
+
 ![](https://i.imgur.com/4CXNy5h.png)
 
 잘되던 detail 페이지가 뭐 건드리지도 않았는데 갑자기 매퍼파일에서 맵핑이 되지않아 에러가 뜸.
