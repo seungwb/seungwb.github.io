@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
     <channel>
-      <title>seungwb&#039;s 개발 노트</title>
+      <title>seungwb&#039;s Garden</title>
       <link>https://quartz.jzhao.xyz</link>
-      <description>Last 10 notes on seungwb&#039;s 개발 노트</description>
+      <description>Last 10 notes on seungwb&#039;s Garden</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>index</title>
+    <title>Welcome to my digital garden</title>
     <link>https://quartz.jzhao.xyz/</link>
     <guid>https://quartz.jzhao.xyz/</guid>
-    <description> 목록내용프로젝트 별 Issue프로젝트 별 이슈 정리하고 해결까지의 과정을 담은 노트개인 프로젝트프로젝트 구조를 담은 노트공부 정리공부 정리 노트.</description>
+    <description> 목록내용프로젝트 별 Issue프로젝트 별 이슈 정리하고 해결까지의 과정을 담은 노트공부 정리공부 정리 노트개인 프로젝트프로젝트 구조를 담은 노트.</description>
     <pubDate>Tue, 25 Mar 2025 13:18:40 GMT</pubDate>
   </item><item>
     <title>개인 프로젝트</title>
@@ -39,7 +39,7 @@
     <title>투두등장</title>
     <link>https://quartz.jzhao.xyz/%EA%B0%9C%EC%9D%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/%ED%88%AC%EB%91%90%EB%93%B1%EC%9E%A5/%ED%88%AC%EB%91%90%EB%93%B1%EC%9E%A5</link>
     <guid>https://quartz.jzhao.xyz/%EA%B0%9C%EC%9D%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/%ED%88%AC%EB%91%90%EB%93%B1%EC%9E%A5/%ED%88%AC%EB%91%90%EB%93%B1%EC%9E%A5</guid>
-    <description> REST API 명세서 아키텍처 설계 기획 .</description>
+    <description> 아키텍처 설계 기획 REST API 명세서 .</description>
     <pubDate>Tue, 25 Mar 2025 13:18:40 GMT</pubDate>
   </item><item>
     <title>Git</title>
@@ -57,7 +57,7 @@
     <title>공부 정리</title>
     <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC</link>
     <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC</guid>
-    <description>강의 중 공부 정리 Java 목록내용자바 기초인프런 이영한 강사님 수업자바 중급인프런 이영한 강사님 수업 Spring 목록내용스프링 입문인프런 이영한 강사님 수업스프링 핵심 원리 - 기본편인프런 이영한 강사님 수업 기타 목록내용네트워크인프런 이영한 강사님 수업Git-JSP- 프로젝트 중 공부 정리 목록내용투두등장프로젝트 중 공부한 것들 정리한 노트.</description>
+    <description>강의 중 공부 정리 Java 목록내용자바 중급인프런 이영한 강사님 수업자바 기초인프런 이영한 강사님 수업 Spring 목록내용스프링 핵심 원리 - 기본편인프런 이영한 강사님 수업스프링 입문인프런 이영한 강사님 수업 기타 목록내용네트워크인프런 이영한 강사님 수업Git-JSP- 프로젝트 중 공부 정리 목록내용투두등장프로젝트 중 공부한 것들 정리한 노트.</description>
     <pubDate>Tue, 25 Mar 2025 13:18:40 GMT</pubDate>
   </item><item>
     <title>네트워크</title>
