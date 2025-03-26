@@ -499,11 +499,6 @@ p {
   td:first-child {
     width: 30%;           // ✅ 제목 열 너비 고정
   }
-
-  th:last-child,
-  td:last-child {
-    width: 70%;           // ✅ 내용 열 너비 고정
-  }
 }
 
 th {
