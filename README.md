@@ -1,18 +1,4 @@
-# Quartz v4
+# Seungwb's digital garden
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
-
-Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
-Quartz v4 features a from-the-ground rewrite focusing on end-user extensibility and ease-of-use.
-
-🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
-
-[Join the Discord Community](https://discord.gg/cRFFHYye7t)
-
-## Sponsors
-
-<p align="center">
-  <a href="https://github.com/sponsors/jackyzha0">
-    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
-  </a>
-</p>
+이 블로그는 [Quartz](https://quartz.jzhao.xyz/)를 기반으로 만들어졌습니다.  
+옵시디언으로 작성한 개발 공부, 프로젝트 기록, 이슈 해결 과정 등을 블로그에 퍼블리싱 하는 것을 목표로 제작되었습니다.
