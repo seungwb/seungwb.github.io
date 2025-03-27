@@ -3,68 +3,68 @@
     <channel>
       <title>seungwb&#039;s Garden</title>
       <link>https://quartz.jzhao.xyz</link>
-      <description>Last 10 notes on seungwb&#039;s Garden</description>
+      <description>최근 10 건 on seungwb&#039;s Garden</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>01. init, add, commit</title>
+    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Git/01.-init,-add,-commit</link>
+    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Git/01.-init,-add,-commit</guid>
+    <description>🔧 Git 기본 명령어 정리 git init 설명: 기존 디렉토리를 Git 저장소로 초기화 사용 시점: 프로젝트 생성 후 Git으로 버전 관리를 시작하고 싶을 때 결과: .git 디렉토리가 생성되고 Git이 해당 폴더를 추적하기 시작함 git add 설명: 변경된 파일들을 staging area에 올리는 명령어 (commit 대상 지정) 자주 쓰는 옵션: git add .</description>
+    <pubDate>Thu, 27 Mar 2025 07:44:29 GMT</pubDate>
+  </item><item>
+    <title>02. branch, switch, merge</title>
+    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Git/02.-branch,-switch,-merge</link>
+    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Git/02.-branch,-switch,-merge</guid>
+    <description>git branch &lt;브랜치명&gt; 설명: 새로운 브랜치를 생성 사용 시점: 기존 main 또는 다른 브랜치에서 기능을 개발하거나 시도해보고 싶을 때 특징: 브랜치를 생성해도 자동으로 이동하지는 않음 git branch feature/login # &#039;feature/login&#039; 브랜치 생성 git switch &lt;브랜치명&gt; 설명: 다른 브랜치로 이동할 때 사용 예시: git switch feature/login # &#039;feature/login&#039; 브랜치로 이동 git checkout &...</description>
+    <pubDate>Thu, 27 Mar 2025 07:44:29 GMT</pubDate>
+  </item><item>
+    <title>03. 다양한 git merge  방법</title>
+    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Git/03.-%EB%8B%A4%EC%96%91%ED%95%9C-git-merge--%EB%B0%A9%EB%B2%95</link>
+    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Git/03.-%EB%8B%A4%EC%96%91%ED%95%9C-git-merge--%EB%B0%A9%EB%B2%95</guid>
+    <description>1️⃣ 3-way merge (기본 merge) 설명: Git이 공통 조상 커밋을 기준으로 두 브랜치를 비교해 병합 커밋을 생성함 특징: 병합 전력이 남는 merge commit이 생기며, 커밋 히스토리가 명확히 분기/병합 구조로 유지됨 사용 시점: 작업 이력을 분리하고 싶을 때, 협업 중 어떤 작업이 언제 합쳐졌는지 추적하고 싶을 때 A---B---C (main) \ D---E (feature) \ F (merge commit) git switch main git merge feature # 기본 병합 방식 (3-way) 2️⃣ ...</description>
+    <pubDate>Thu, 27 Mar 2025 07:44:29 GMT</pubDate>
+  </item><item>
+    <title>Git</title>
+    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Git/Git</link>
+    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Git/Git</guid>
+    <description> 01. init, add, commit 02. branch, switch, merge 03. 다양한 git merge 방법 .</description>
+    <pubDate>Thu, 27 Mar 2025 07:44:29 GMT</pubDate>
+  </item><item>
+    <title>공부 정리</title>
+    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC</link>
+    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC</guid>
+    <description>강의 중 공부 정리 Java 목록내용자바 중급인프런 이영한 강사님 수업자바 기초인프런 이영한 강사님 수업 Spring 목록내용스프링 핵심 원리 - 기본편인프런 이영한 강사님 수업스프링 입문인프런 이영한 강사님 수업 기타 목록내용네트워크인프런 이영한 강사님 수업JSP-GitGit 강의 프로젝트 중 공부 정리 목록내용투두등장프로젝트 중 공부한 것들 정리한 노트.</description>
+    <pubDate>Thu, 27 Mar 2025 07:44:29 GMT</pubDate>
+  </item><item>
+    <title>Backend</title>
+    <link>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EA%B8%B0%EB%86%8D%EC%9D%B4%EB%84%A4/Backend/Backend</link>
+    <guid>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EA%B8%B0%EB%86%8D%EC%9D%B4%EB%84%A4/Backend/Backend</guid>
+    <description> 목록키워드BackendGinongIssueBackJavahtmlSpringSecuritymybatissqldbGinongIssueMapper 파일 맵핑 에러GinongIssueBackJavamybatisreg페이지 post요청 시 403 에러GinongIssueBackJavahtmlSpringSecurityAuto Increment로 생성된 id 재사용GinongIssueBackJavasqldb.</description>
+    <pubDate>Thu, 27 Mar 2025 07:44:29 GMT</pubDate>
+  </item><item>
+    <title>Frontend</title>
+    <link>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EA%B8%B0%EB%86%8D%EC%9D%B4%EB%84%A4/Frontend/Frontend</link>
+    <guid>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EA%B8%B0%EB%86%8D%EC%9D%B4%EB%84%A4/Frontend/Frontend</guid>
+    <description> 목록키워드Selector 옵션 hover 시 색이 파란색으로 고정GinongIssueFronthtmlJavascriptcssJavaScript 정규표현식 사용GinongIssueFrontJavascript정규식FrontendGinongIssueFrontJavascript정규식htmlcssGinongIssue.</description>
+    <pubDate>Thu, 27 Mar 2025 07:44:29 GMT</pubDate>
+  </item><item>
+    <title>기농이네</title>
+    <link>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EA%B8%B0%EB%86%8D%EC%9D%B4%EB%84%A4/%EA%B8%B0%EB%86%8D%EC%9D%B4%EB%84%A4</link>
+    <guid>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EA%B8%B0%EB%86%8D%EC%9D%B4%EB%84%A4/%EA%B8%B0%EB%86%8D%EC%9D%B4%EB%84%A4</guid>
+    <description> Backend Frontend .</description>
+    <pubDate>Thu, 27 Mar 2025 07:44:29 GMT</pubDate>
+  </item><item>
     <title>Welcome to my digital garden</title>
     <link>https://quartz.jzhao.xyz/</link>
     <guid>https://quartz.jzhao.xyz/</guid>
     <description> 목록내용프로젝트 별 Issue프로젝트 별 이슈 정리하고 해결까지의 과정을 담은 노트공부 정리공부 정리 노트개인 프로젝트프로젝트 구조를 담은 노트.</description>
-    <pubDate>Tue, 25 Mar 2025 13:18:40 GMT</pubDate>
-  </item><item>
-    <title>개인 프로젝트</title>
-    <link>https://quartz.jzhao.xyz/%EA%B0%9C%EC%9D%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/%EA%B0%9C%EC%9D%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8</link>
-    <guid>https://quartz.jzhao.xyz/%EA%B0%9C%EC%9D%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/%EA%B0%9C%EC%9D%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8</guid>
-    <description> 목록내용투두등장일정 관리 및 할일 목록을 관리하는 웹 어플리케이션.</description>
-    <pubDate>Tue, 25 Mar 2025 13:18:40 GMT</pubDate>
-  </item><item>
-    <title>REST API 명세서</title>
-    <link>https://quartz.jzhao.xyz/%EA%B0%9C%EC%9D%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/%ED%88%AC%EB%91%90%EB%93%B1%EC%9E%A5/REST-API-%EB%AA%85%EC%84%B8%EC%84%9C</link>
-    <guid>https://quartz.jzhao.xyz/%EA%B0%9C%EC%9D%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/%ED%88%AC%EB%91%90%EB%93%B1%EC%9E%A5/REST-API-%EB%AA%85%EC%84%B8%EC%84%9C</guid>
-    <description>AUTH 로그인 URL POST : /api/auth/sign-in Header Request NameType (front/ back)RequiredDescriptionemailstring/ String이메일passwordstring/ String패스워드 Response Success NameType (front/ back)RequiredDescriptioncodestring/ String코드messagestring/ String메시지tokenstring/ StringJWTexpirationTimenumber/ intJWT 만료 시...</description>
-    <pubDate>Tue, 25 Mar 2025 13:18:40 GMT</pubDate>
-  </item><item>
-    <title>기획</title>
-    <link>https://quartz.jzhao.xyz/%EA%B0%9C%EC%9D%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/%ED%88%AC%EB%91%90%EB%93%B1%EC%9E%A5/%EA%B8%B0%ED%9A%8D</link>
-    <guid>https://quartz.jzhao.xyz/%EA%B0%9C%EC%9D%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/%ED%88%AC%EB%91%90%EB%93%B1%EC%9E%A5/%EA%B8%B0%ED%9A%8D</guid>
-    <description>페이지별 기능 Member Index page 필수 기능 오늘의 날씨 조회 오늘의 일정 조회 할일 목록 조회 이번주 일정 조회 추가 기능 Schedule page 필수 기능 캘린더 뷰 (FullCalendar 라이브러리) 일정 CRUD 추가 기능 알림 기능 다크 모드 이전 일정, 오늘 일정, 차후 일정 나눠서 볼 수 있도록 Auth page Signin 필수 기능 일반 로그인 기능 추가 기능 소셜 로그인 기능 (구글, 네이버) 아이디 저장 비밀번호 직접 보일수도 있도록 구현 Signup 필수 기능 이름 - 한글만 들어가도록 유효성 ...</description>
-    <pubDate>Tue, 25 Mar 2025 13:18:40 GMT</pubDate>
-  </item><item>
-    <title>아키텍처 설계</title>
-    <link>https://quartz.jzhao.xyz/%EA%B0%9C%EC%9D%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/%ED%88%AC%EB%91%90%EB%93%B1%EC%9E%A5/%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EC%84%A4%EA%B3%84</link>
-    <guid>https://quartz.jzhao.xyz/%EA%B0%9C%EC%9D%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/%ED%88%AC%EB%91%90%EB%93%B1%EC%9E%A5/%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EC%84%A4%EA%B3%84</guid>
-    <description>시스템 개요 프로젝트 명: 투두등장 프로젝트 목적: 일정을 관리하기위한 웹 애플리케이션 개발 기술 스택 백엔드 사용 기술 패키지 관리 개발 환경 배포 프론트엔드 사용 기술 설정 및 패키지 관리 개발 환경 배포 아키텍처 다이어그램 프론트엔드: React + Vite + Tailwind CSS 백엔드: Spring Boot + JPA + Spring Security 데이터 베이스: PostgreSQL API 연동: RESTful API ( JWT 인증 사용 ) 외부 서비스: OpenWeather API, FullCalendar 라이브러...</description>
-    <pubDate>Tue, 25 Mar 2025 13:18:40 GMT</pubDate>
+    <pubDate>Wed, 26 Mar 2025 04:02:06 GMT</pubDate>
   </item><item>
     <title>투두등장</title>
     <link>https://quartz.jzhao.xyz/%EA%B0%9C%EC%9D%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/%ED%88%AC%EB%91%90%EB%93%B1%EC%9E%A5/%ED%88%AC%EB%91%90%EB%93%B1%EC%9E%A5</link>
     <guid>https://quartz.jzhao.xyz/%EA%B0%9C%EC%9D%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/%ED%88%AC%EB%91%90%EB%93%B1%EC%9E%A5/%ED%88%AC%EB%91%90%EB%93%B1%EC%9E%A5</guid>
     <description> 아키텍처 설계 기획 REST API 명세서 .</description>
-    <pubDate>Tue, 25 Mar 2025 13:18:40 GMT</pubDate>
-  </item><item>
-    <title>Git</title>
-    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Git/Git</link>
-    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Git/Git</guid>
-    <description>TABLE file.path AS &quot;경로&quot; FROM &quot;공부 정리/Git&quot; WHERE file.name != &quot;Git&quot; SORT file.name asc.</description>
-    <pubDate>Tue, 25 Mar 2025 13:18:40 GMT</pubDate>
-  </item><item>
-    <title>JSP</title>
-    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/JSP/JSP</link>
-    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/JSP/JSP</guid>
-    <description>const currentFile = dv.current(); const currentFilePath = currentFile.file.path; const currentFolder = currentFile.file.folder; const currentFolderName = currentFolder.split(&#039;/&#039;).pop(); const isWebExport = typeof app === &quot;undefined&quot;; const files = dv.pages(`&quot;${currentFolder}...</description>
-    <pubDate>Tue, 25 Mar 2025 13:18:40 GMT</pubDate>
-  </item><item>
-    <title>공부 정리</title>
-    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC</link>
-    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC</guid>
-    <description>강의 중 공부 정리 Java 목록내용자바 중급인프런 이영한 강사님 수업자바 기초인프런 이영한 강사님 수업 Spring 목록내용스프링 핵심 원리 - 기본편인프런 이영한 강사님 수업스프링 입문인프런 이영한 강사님 수업 기타 목록내용네트워크인프런 이영한 강사님 수업Git-JSP- 프로젝트 중 공부 정리 목록내용투두등장프로젝트 중 공부한 것들 정리한 노트.</description>
-    <pubDate>Tue, 25 Mar 2025 13:18:40 GMT</pubDate>
-  </item><item>
-    <title>네트워크</title>
-    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC</link>
-    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC</guid>
-    <description> 인터넷 네트워크 .</description>
-    <pubDate>Tue, 25 Mar 2025 13:18:40 GMT</pubDate>
+    <pubDate>Wed, 26 Mar 2025 04:02:06 GMT</pubDate>
   </item>
     </channel>
   </rss>
