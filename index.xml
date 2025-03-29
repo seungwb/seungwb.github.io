@@ -6,6 +6,24 @@
       <description>최근 10 건 on seungwb&#039;s Garden</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>05. push, remote</title>
+    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Git/05.-push,-remote</link>
+    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Git/05.-push,-remote</guid>
+    <description>online repositoy git으로 형상 관리를 하지만 이는 로컬에 하는 것이였으므로 컴퓨터가 모종의 이유로 데이터를 모두 잃는다면 저장해놓은 것도 모두 잃으므로 의미가 없다.</description>
+    <pubDate>Sat, 29 Mar 2025 08:37:25 GMT</pubDate>
+  </item><item>
+    <title>04. revert, reset, restore</title>
+    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Git/04.-revert,-reset,-restore</link>
+    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Git/04.-revert,-reset,-restore</guid>
+    <description> 자주 사용하는 문법이 아닌 필요할 때만 찾아쓰는 문법들, commit 한 작업 내용을 되돌리는데 유용한 명령어들이다.</description>
+    <pubDate>Sat, 29 Mar 2025 08:37:12 GMT</pubDate>
+  </item><item>
+    <title>06. clone, pull</title>
+    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Git/06.-clone,-pull</link>
+    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Git/06.-clone,-pull</guid>
+    <description> 원격 저장소를 사용하는 이유는 로컬에 있는 내용을 저장하기 위함도 있지만 함께 협업하기 위해 사용된다. 각자가 내용 수정 후 하나의 레포지토리에서 공유하면 좋을 것인데 다른 사람이 원격 저장소에 push 해놓은 내용을 받기 위한 명령어가 pull과 clone이다.</description>
+    <pubDate>Sat, 29 Mar 2025 08:36:55 GMT</pubDate>
+  </item><item>
     <title>01. init, add, commit</title>
     <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Git/01.-init,-add,-commit</link>
     <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Git/01.-init,-add,-commit</guid>
@@ -27,44 +45,26 @@
     <title>Git</title>
     <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Git/Git</link>
     <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Git/Git</guid>
-    <description> 01. init, add, commit 02. branch, switch, merge 03. 다양한 git merge 방법 .</description>
+    <description> 01. init, add, commit 02. branch, switch, merge 03. 다양한 git merge 방법 04. revert, reset, restore 05. push, remote 06. clone, pull .</description>
     <pubDate>Thu, 27 Mar 2025 07:44:29 GMT</pubDate>
   </item><item>
     <title>공부 정리</title>
     <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC</link>
     <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC</guid>
-    <description>강의 중 공부 정리 Java 목록내용자바 중급인프런 이영한 강사님 수업자바 기초인프런 이영한 강사님 수업 Spring 목록내용스프링 핵심 원리 - 기본편인프런 이영한 강사님 수업스프링 입문인프런 이영한 강사님 수업 기타 목록내용네트워크인프런 이영한 강사님 수업JSP-GitGit 강의 프로젝트 중 공부 정리 목록내용투두등장프로젝트 중 공부한 것들 정리한 노트.</description>
+    <description>강의 중 공부 정리 Java 목차내용자바 중급인프런 이영한 강사님 수업자바 기초인프런 이영한 강사님 수업 Spring 목차내용스프링 핵심 원리 - 기본편인프런 이영한 강사님 수업스프링 입문인프런 이영한 강사님 수업 기타 목차내용네트워크인프런 이영한 강사님 수업JSP-Git코딩애플 강사님 강의 프로젝트 중 공부 정리 목차내용투두등장프로젝트 중 공부한 것들 정리한 노트.</description>
     <pubDate>Thu, 27 Mar 2025 07:44:29 GMT</pubDate>
   </item><item>
     <title>Backend</title>
     <link>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EA%B8%B0%EB%86%8D%EC%9D%B4%EB%84%A4/Backend/Backend</link>
     <guid>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EA%B8%B0%EB%86%8D%EC%9D%B4%EB%84%A4/Backend/Backend</guid>
-    <description> 목록키워드BackendGinongIssueBackJavahtmlSpringSecuritymybatissqldbGinongIssueMapper 파일 맵핑 에러GinongIssueBackJavamybatisreg페이지 post요청 시 403 에러GinongIssueBackJavahtmlSpringSecurityAuto Increment로 생성된 id 재사용GinongIssueBackJavasqldb.</description>
+    <description> 목차키워드reg페이지 post요청 시 403 에러GinongIssueBackJavahtmlSpringSecurityMapper 파일 맵핑 에러GinongIssueBackJavamybatisAuto Increment로 생성된 id 재사용GinongIssueBackJavasqldbBackendGinongIssueBackJavahtmlSpringSecuritymybatissqldbGinongIssue.</description>
     <pubDate>Thu, 27 Mar 2025 07:44:29 GMT</pubDate>
   </item><item>
     <title>Frontend</title>
     <link>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EA%B8%B0%EB%86%8D%EC%9D%B4%EB%84%A4/Frontend/Frontend</link>
     <guid>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EA%B8%B0%EB%86%8D%EC%9D%B4%EB%84%A4/Frontend/Frontend</guid>
-    <description> 목록키워드Selector 옵션 hover 시 색이 파란색으로 고정GinongIssueFronthtmlJavascriptcssJavaScript 정규표현식 사용GinongIssueFrontJavascript정규식FrontendGinongIssueFrontJavascript정규식htmlcssGinongIssue.</description>
+    <description> 목차키워드Selector 옵션 hover 시 색이 파란색으로 고정GinongIssueFronthtmlJavascriptcssJavaScript 정규표현식 사용GinongIssueFrontJavascript정규식FrontendGinongIssueFrontJavascript정규식htmlcssGinongIssue.</description>
     <pubDate>Thu, 27 Mar 2025 07:44:29 GMT</pubDate>
-  </item><item>
-    <title>기농이네</title>
-    <link>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EA%B8%B0%EB%86%8D%EC%9D%B4%EB%84%A4/%EA%B8%B0%EB%86%8D%EC%9D%B4%EB%84%A4</link>
-    <guid>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EA%B8%B0%EB%86%8D%EC%9D%B4%EB%84%A4/%EA%B8%B0%EB%86%8D%EC%9D%B4%EB%84%A4</guid>
-    <description> Backend Frontend .</description>
-    <pubDate>Thu, 27 Mar 2025 07:44:29 GMT</pubDate>
-  </item><item>
-    <title>Welcome to my digital garden</title>
-    <link>https://quartz.jzhao.xyz/</link>
-    <guid>https://quartz.jzhao.xyz/</guid>
-    <description> 목록내용프로젝트 별 Issue프로젝트 별 이슈 정리하고 해결까지의 과정을 담은 노트공부 정리공부 정리 노트개인 프로젝트프로젝트 구조를 담은 노트.</description>
-    <pubDate>Wed, 26 Mar 2025 04:02:06 GMT</pubDate>
-  </item><item>
-    <title>투두등장</title>
-    <link>https://quartz.jzhao.xyz/%EA%B0%9C%EC%9D%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/%ED%88%AC%EB%91%90%EB%93%B1%EC%9E%A5/%ED%88%AC%EB%91%90%EB%93%B1%EC%9E%A5</link>
-    <guid>https://quartz.jzhao.xyz/%EA%B0%9C%EC%9D%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/%ED%88%AC%EB%91%90%EB%93%B1%EC%9E%A5/%ED%88%AC%EB%91%90%EB%93%B1%EC%9E%A5</guid>
-    <description> 아키텍처 설계 기획 REST API 명세서 .</description>
-    <pubDate>Wed, 26 Mar 2025 04:02:06 GMT</pubDate>
   </item>
     </channel>
   </rss>
