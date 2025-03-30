@@ -1,6 +1,6 @@
 ---
 tags:
-  - "#GinongIssueFront"
+  - "#FrontGinongIssue"
   - "#Javascript"
   - "#정규식"
 ---

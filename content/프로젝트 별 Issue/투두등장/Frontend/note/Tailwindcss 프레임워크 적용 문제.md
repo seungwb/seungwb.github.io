@@ -1,6 +1,6 @@
 ---
 tags:
-  - "#TodoIssueFront"
+  - FrontTodoIssue
   - "#tailwind"
 ---
 

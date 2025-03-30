@@ -1,6 +1,6 @@
 ---
 tags:
-  - "#GinongIssueFront"
+  - "#FrontGinongIssue"
   - "#html"
   - "#Javascript"
   - "#css"
