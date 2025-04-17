@@ -6,65 +6,65 @@
       <description>최근 10 건 on seungwb&#039;s Garden</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>Welcome to my digital garden</title>
-    <link>https://quartz.jzhao.xyz/</link>
-    <guid>https://quartz.jzhao.xyz/</guid>
-    <description> 목차내용기술 면접기술 면접 준비 내용개인 프로젝트프로젝트 구조를 담은 노트공부 정리공부 정리 노트프로젝트 별 Issue프로젝트 별 이슈 정리하고 해결까지의 과정을 담은 노트.</description>
-    <pubDate>Sun, 30 Mar 2025 09:51:19 GMT</pubDate>
+    <title>Vue.js 실무 교육</title>
+    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Vue.js-%EC%8B%A4%EB%AC%B4-%EA%B5%90%EC%9C%A1/Vue.js-%EC%8B%A4%EB%AC%B4-%EA%B5%90%EC%9C%A1</link>
+    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Vue.js-%EC%8B%A4%EB%AC%B4-%EA%B5%90%EC%9C%A1/Vue.js-%EC%8B%A4%EB%AC%B4-%EA%B5%90%EC%9C%A1</guid>
+    <description> 01. 모듈 번들러, Javascript ES6 문법, Vue 문법 02. Pinia, Props, SSR, CSR 03. Blob(), URLSearchParams(), RquestPart 04. 컨버전 프로젝트 05. Vue의 상태관리 .</description>
+    <pubDate>Thu, 17 Apr 2025 07:31:41 GMT</pubDate>
   </item><item>
-    <title>투두등장</title>
-    <link>https://quartz.jzhao.xyz/%EA%B0%9C%EC%9D%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/%ED%88%AC%EB%91%90%EB%93%B1%EC%9E%A5/%ED%88%AC%EB%91%90%EB%93%B1%EC%9E%A5</link>
-    <guid>https://quartz.jzhao.xyz/%EA%B0%9C%EC%9D%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/%ED%88%AC%EB%91%90%EB%93%B1%EC%9E%A5/%ED%88%AC%EB%91%90%EB%93%B1%EC%9E%A5</guid>
-    <description> 아키텍처 설계 REST API 명세서 기획 .</description>
-    <pubDate>Sun, 30 Mar 2025 09:51:19 GMT</pubDate>
+    <title>Frontend</title>
+    <link>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EC%8B%A4%EB%AC%B4%EA%B5%90%EC%9C%A1-Vue/Frontend/Frontend</link>
+    <guid>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EC%8B%A4%EB%AC%B4%EA%B5%90%EC%9C%A1-Vue/Frontend/Frontend</guid>
+    <description> 화살표 함수와 함수 선언문의 차이 Pinia 상태 관리 오류 및 모달 창 충돌 Vue.js 버튼 클릭 이벤트에서 함수 호출 문제 .</description>
+    <pubDate>Thu, 17 Apr 2025 07:31:41 GMT</pubDate>
   </item><item>
-    <title>03. 다양한 git merge 방법</title>
-    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Git/03.-%EB%8B%A4%EC%96%91%ED%95%9C-git-merge-%EB%B0%A9%EB%B2%95</link>
-    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Git/03.-%EB%8B%A4%EC%96%91%ED%95%9C-git-merge-%EB%B0%A9%EB%B2%95</guid>
-    <description>1️⃣ 3-way merge (기본 merge) 설명: Git이 공통 조상 커밋을 기준으로 두 브랜치를 비교해 병합 커밋을 생성함 특징: 병합 전력이 남는 merge commit이 생기며, 커밋 히스토리가 명확히 분기/병합 구조로 유지됨 사용 시점: 작업 이력을 분리하고 싶을 때, 협업 중 어떤 작업이 언제 합쳐졌는지 추적하고 싶을 때 A---B---C (main) \ D---E (feature) \ F (merge commit) git switch main git merge feature # 기본 병합 방식 (3-way) 2️⃣ ...</description>
-    <pubDate>Sun, 30 Mar 2025 09:51:19 GMT</pubDate>
+    <title>실무교육 Vue</title>
+    <link>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EC%8B%A4%EB%AC%B4%EA%B5%90%EC%9C%A1-Vue/%EC%8B%A4%EB%AC%B4%EA%B5%90%EC%9C%A1-Vue</link>
+    <guid>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EC%8B%A4%EB%AC%B4%EA%B5%90%EC%9C%A1-Vue/%EC%8B%A4%EB%AC%B4%EA%B5%90%EC%9C%A1-Vue</guid>
+    <description> Frontend .</description>
+    <pubDate>Thu, 17 Apr 2025 07:31:41 GMT</pubDate>
   </item><item>
-    <title>07. branch를 이용한 협업 (pull request)</title>
-    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Git/07.-branch%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%ED%98%91%EC%97%85-(pull-request)</link>
-    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Git/07.-branch%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%ED%98%91%EC%97%85-(pull-request)</guid>
-    <description> 현업에서는 많은 개발자가 하나의 프로젝트를 수행하기 위해 원격 저장소에서 작업을 수행한다. 작업 중 충돌을 피하기 위해 각자 작업할 공간을 branch로 만들어서 merge 요청을 통해 작업을 하게 된다.</description>
-    <pubDate>Sun, 30 Mar 2025 09:51:19 GMT</pubDate>
+    <title>화살표 함수와 함수 선언문의 차이</title>
+    <link>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EC%8B%A4%EB%AC%B4%EA%B5%90%EC%9C%A1-Vue/Frontend/%ED%99%94%EC%82%B4%ED%91%9C-%ED%95%A8%EC%88%98%EC%99%80-%ED%95%A8%EC%88%98-%EC%84%A0%EC%96%B8%EB%AC%B8%EC%9D%98-%EC%B0%A8%EC%9D%B4</link>
+    <guid>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EC%8B%A4%EB%AC%B4%EA%B5%90%EC%9C%A1-Vue/Frontend/%ED%99%94%EC%82%B4%ED%91%9C-%ED%95%A8%EC%88%98%EC%99%80-%ED%95%A8%EC%88%98-%EC%84%A0%EC%96%B8%EB%AC%B8%EC%9D%98-%EC%B0%A8%EC%9D%B4</guid>
+    <description>문제 발생 공지 사항 모달 창에서 처음에는 이미지가 잘 보이는데 모달을 닫고 다시 모달을 열면 모달이 다시 안켜지는 버그가 발생했다.</description>
+    <pubDate>Thu, 17 Apr 2025 07:26:33 GMT</pubDate>
   </item><item>
-    <title>08. branch 전략</title>
-    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Git/08.-branch-%EC%A0%84%EB%9E%B5</link>
-    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Git/08.-branch-%EC%A0%84%EB%9E%B5</guid>
-    <description> 마구잡이로 branch를 만들어 merge하는 형태로 하다보면 log가 너무 복잡해서 가독성이 떨어지게 된다. 이러한 것을 피하기위해 적절한 branch전략을 새워야 한다.</description>
-    <pubDate>Sun, 30 Mar 2025 09:51:19 GMT</pubDate>
+    <title>05. Vue의 상태관리</title>
+    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Vue.js-%EC%8B%A4%EB%AC%B4-%EA%B5%90%EC%9C%A1/05.-Vue%EC%9D%98-%EC%83%81%ED%83%9C%EA%B4%80%EB%A6%AC</link>
+    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Vue.js-%EC%8B%A4%EB%AC%B4-%EA%B5%90%EC%9C%A1/05.-Vue%EC%9D%98-%EC%83%81%ED%83%9C%EA%B4%80%EB%A6%AC</guid>
+    <description>useMutation useMutation은 Vue Query(@tanstack/vue-query)에서 서버의 데이터를 “변경”하는 작업(생성, 수정, 삭제 등)에 사용하는 컴포저블 함수입니다.</description>
+    <pubDate>Thu, 17 Apr 2025 06:12:19 GMT</pubDate>
   </item><item>
-    <title>Git</title>
-    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Git/Git</link>
-    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Git/Git</guid>
-    <description> 01. init, add, commit 02. branch, switch, merge 03. 다양한 git merge 방법 04. revert, reset, restore 05. push, remote 06. clone, pull 07.</description>
-    <pubDate>Sun, 30 Mar 2025 09:51:19 GMT</pubDate>
+    <title>02. 스프링 핵심 원리 이해 1</title>
+    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC---%EA%B8%B0%EB%B3%B8%ED%8E%B8/02.-%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EC%9D%B4%ED%95%B4-1</link>
+    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC---%EA%B8%B0%EB%B3%B8%ED%8E%B8/02.-%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EC%9D%B4%ED%95%B4-1</guid>
+    <description> 비즈니스 요구사항과 설계 클라이언트의 요구사항은 개발 시작 전까지 완전히 정해져 있지 않은 경우들이 있다. 그렇다고 요구사항이 완전히 정해질 때까지 개발을 손놓을 수는 없는 법이다. 최악의 경우에는 서비스 시작이 임박했을 때 정해지는 요구사항들도 있을 것이다.</description>
+    <pubDate>Wed, 16 Apr 2025 07:09:21 GMT</pubDate>
   </item><item>
-    <title>03. 백엔드 개발</title>
-    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8/03.-%EB%B0%B1%EC%97%94%EB%93%9C-%EA%B0%9C%EB%B0%9C</link>
-    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8/03.-%EB%B0%B1%EC%97%94%EB%93%9C-%EA%B0%9C%EB%B0%9C</guid>
-    <description>비즈니스 요구사항 정리 Spring 기반의 Clean Architecture 혹은 계층형 아키텍처 설계를 바탕으로 하며, MVC 역할 분담이 명확하게 되어 있더 확장과 유지보수에 유리하다.</description>
-    <pubDate>Sun, 30 Mar 2025 09:51:19 GMT</pubDate>
+    <title>07. AOP</title>
+    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8/07.-AOP</link>
+    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8/07.-AOP</guid>
+    <description>AOP(관점 지향 프로그래밍)란? AOP는 핵심 비즈니스 로직과 부가적인 관심사(공통 기능, 예: 로깅, 트랜잭션, 보안 등)를 분리하여 개발할 수 있게 해주는 프로그래밍 패러다임입니다.</description>
+    <pubDate>Wed, 16 Apr 2025 04:44:45 GMT</pubDate>
   </item><item>
-    <title>스프링 입문</title>
-    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8</link>
-    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8</guid>
-    <description> 01. 프로젝트 환경 설정 02. 스프링 웹 개발 기초 03. 백엔드 개발 .</description>
-    <pubDate>Sun, 30 Mar 2025 09:51:19 GMT</pubDate>
+    <title>06. 스프링 DB 접근 기술</title>
+    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8/06.-%EC%8A%A4%ED%94%84%EB%A7%81-DB-%EC%A0%91%EA%B7%BC-%EA%B8%B0%EC%88%A0</link>
+    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8/06.-%EC%8A%A4%ED%94%84%EB%A7%81-DB-%EC%A0%91%EA%B7%BC-%EA%B8%B0%EC%88%A0</guid>
+    <description>Spring JDBC JdbcTemplate JdbcTemplate은 Spring JDBC의 핵심 클래스입니다. JDBC의 반복적인 자원 관리(커넥션, Statement, ResultSet 등)를 자동으로 처리해주고, SQL 실행과 예외 처리를 간소화합니다.</description>
+    <pubDate>Wed, 16 Apr 2025 03:02:57 GMT</pubDate>
   </item><item>
-    <title>Backend</title>
-    <link>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EA%B8%B0%EB%86%8D%EC%9D%B4%EB%84%A4/Backend/Backend</link>
-    <guid>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EA%B8%B0%EB%86%8D%EC%9D%B4%EB%84%A4/Backend/Backend</guid>
-    <description> 목차키워드Auto Increment로 생성된 id 재사용BackGinongIssueJavasqldbMapper 파일 맵핑 에러BackGinongIssueJavamybatisreg페이지 post요청 시 403 에러BackGinongIssueJavahtmlSpringSecurity.</description>
-    <pubDate>Sun, 30 Mar 2025 09:51:19 GMT</pubDate>
+    <title>05. 웹 MVC 개발</title>
+    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8/05.-%EC%9B%B9-MVC-%EA%B0%9C%EB%B0%9C</link>
+    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8/05.-%EC%9B%B9-MVC-%EA%B0%9C%EB%B0%9C</guid>
+    <description>@Controller public class MemberController { private final MemberService memberService; @Autowired public MemberController(MemberService memberService) { this.memberService = memberService; } @GetMapping(&quot;/members/new&quot;) public String createForm() { return &quot;members/createMemberForm&quot...</description>
+    <pubDate>Tue, 15 Apr 2025 06:41:50 GMT</pubDate>
   </item><item>
-    <title>Auto Increment로 생성된 id 재사용</title>
-    <link>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EA%B8%B0%EB%86%8D%EC%9D%B4%EB%84%A4/Backend/note/Auto-Increment%EB%A1%9C-%EC%83%9D%EC%84%B1%EB%90%9C-id-%EC%9E%AC%EC%82%AC%EC%9A%A9</link>
-    <guid>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EA%B8%B0%EB%86%8D%EC%9D%B4%EB%84%A4/Backend/note/Auto-Increment%EB%A1%9C-%EC%83%9D%EC%84%B1%EB%90%9C-id-%EC%9E%AC%EC%82%AC%EC%9A%A9</guid>
-    <description>admin/product/reg 페이지 작성 중 post요청으로 페이지에 값을 받은 후 Product테이블에 상품을 등록하고 이 Product 테이블에 Auto increment 로 생성된 id값을 Stock 에 product_id를 FK로 등록해야 하는데 자동으로 생성되는 값이라 방법을 찾아 봄 &lt;insert id=&quot;save&quot; parameterType=&quot;Product&quot;&gt; INSERT INTO PRODUCT( name, price, quantity, weight, thumbnail_na...</description>
-    <pubDate>Sun, 30 Mar 2025 09:51:19 GMT</pubDate>
+    <title>04. 스프링 빈과 의존관계</title>
+    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8/04.-%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B9%88%EA%B3%BC-%EC%9D%98%EC%A1%B4%EA%B4%80%EA%B3%84</link>
+    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8/04.-%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B9%88%EA%B3%BC-%EC%9D%98%EC%A1%B4%EA%B4%80%EA%B3%84</guid>
+    <description> 스프링 빈은 스프링 컨테이너에 의해 관리되는 자바 객체로, 재사용 가능한 소프트웨어 컴포넌트를 의미하며, 주로 싱글톤 스코프로 생성된다.</description>
+    <pubDate>Mon, 14 Apr 2025 03:35:34 GMT</pubDate>
   </item>
     </channel>
   </rss>
