@@ -4,13 +4,12 @@ title: Welcome to my digital garden
 
 %% DATAVIEW_PUBLISHER: start
 ```dataview
-table content as "내용" from #root
+table content as "내용" from #root sort file.name asc
 ```
 %%
 
-| 목차                                             | 내용                              |
+| File                                           | 내용                              |
 | ---------------------------------------------- | ------------------------------- |
-| [[기술 면접/기술 면접.md\|기술 면접]]                      | 기술 면접 준비 내용                     |
 | [[개인 프로젝트/개인 프로젝트.md\|개인 프로젝트]]                | 프로젝트 구조를 담은 노트                  |
 | [[공부 정리/공부 정리.md\|공부 정리]]                      | 공부 정리 노트                        |
 | [[프로젝트 별 Issue/프로젝트 별 Issue.md\|프로젝트 별 Issue]] | 프로젝트 별 이슈  정리하고 해결까지의 과정을 담은 노트 |

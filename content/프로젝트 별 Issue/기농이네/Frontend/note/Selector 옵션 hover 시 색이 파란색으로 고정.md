@@ -1,6 +1,6 @@
 ---
 tags:
-  - "#FrontGinongIssue"
+  - GinongIssue_front
   - "#html"
   - "#Javascript"
   - "#css"

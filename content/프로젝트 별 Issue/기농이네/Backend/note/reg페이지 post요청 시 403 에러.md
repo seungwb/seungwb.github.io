@@ -1,6 +1,6 @@
 ---
 tags:
-  - BackGinongIssue
+  - GinongIssue_back
   - "#Java"
   - "#html"
   - "#Spring"
