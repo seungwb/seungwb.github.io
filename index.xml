@@ -6,65 +6,65 @@
       <description>최근 10 건 on seungwb&#039;s Garden</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>Vue.js 실무 교육</title>
-    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Vue.js-%EC%8B%A4%EB%AC%B4-%EA%B5%90%EC%9C%A1/Vue.js-%EC%8B%A4%EB%AC%B4-%EA%B5%90%EC%9C%A1</link>
-    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Vue.js-%EC%8B%A4%EB%AC%B4-%EA%B5%90%EC%9C%A1/Vue.js-%EC%8B%A4%EB%AC%B4-%EA%B5%90%EC%9C%A1</guid>
-    <description> 01. 모듈 번들러, Javascript ES6 문법, Vue 문법 02. Pinia, Props, SSR, CSR 03. Blob(), URLSearchParams(), RquestPart 04. 컨버전 프로젝트 05. Vue의 상태관리 .</description>
-    <pubDate>Thu, 17 Apr 2025 07:31:41 GMT</pubDate>
+    <title>HTTP 웹 기본 지식</title>
+    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/HTTP-%EC%9B%B9-%EA%B8%B0%EB%B3%B8-%EC%A7%80%EC%8B%9D/HTTP-%EC%9B%B9-%EA%B8%B0%EB%B3%B8-%EC%A7%80%EC%8B%9D</link>
+    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/HTTP-%EC%9B%B9-%EA%B8%B0%EB%B3%B8-%EC%A7%80%EC%8B%9D/HTTP-%EC%9B%B9-%EA%B8%B0%EB%B3%B8-%EC%A7%80%EC%8B%9D</guid>
+    <description> 01. 인터넷 네트워크 02. URI와 웹 브라우저 요청 흐름 03. HTTP 기본 04. HTTP 메서드 05. HTTP 메서드 활용 .</description>
+    <pubDate>Thu, 05 Jun 2025 07:07:06 GMT</pubDate>
   </item><item>
-    <title>Frontend</title>
-    <link>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EC%8B%A4%EB%AC%B4%EA%B5%90%EC%9C%A1-Vue/Frontend/Frontend</link>
-    <guid>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EC%8B%A4%EB%AC%B4%EA%B5%90%EC%9C%A1-Vue/Frontend/Frontend</guid>
-    <description> 화살표 함수와 함수 선언문의 차이 Pinia 상태 관리 오류 및 모달 창 충돌 Vue.js 버튼 클릭 이벤트에서 함수 호출 문제 .</description>
-    <pubDate>Thu, 17 Apr 2025 07:31:41 GMT</pubDate>
+    <title>스프링, JSP 실무 교육</title>
+    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81,-JSP-%EC%8B%A4%EB%AC%B4-%EA%B5%90%EC%9C%A1/%EC%8A%A4%ED%94%84%EB%A7%81,-JSP-%EC%8B%A4%EB%AC%B4-%EA%B5%90%EC%9C%A1</link>
+    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81,-JSP-%EC%8B%A4%EB%AC%B4-%EA%B5%90%EC%9C%A1/%EC%8A%A4%ED%94%84%EB%A7%81,-JSP-%EC%8B%A4%EB%AC%B4-%EA%B5%90%EC%9C%A1</guid>
+    <description> 01. Ajax 02. Mapper 03. jQuery 문법 04. SVN 재연결 방법 .</description>
+    <pubDate>Thu, 05 Jun 2025 07:07:06 GMT</pubDate>
   </item><item>
-    <title>실무교육 Vue</title>
-    <link>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EC%8B%A4%EB%AC%B4%EA%B5%90%EC%9C%A1-Vue/%EC%8B%A4%EB%AC%B4%EA%B5%90%EC%9C%A1-Vue</link>
-    <guid>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EC%8B%A4%EB%AC%B4%EA%B5%90%EC%9C%A1-Vue/%EC%8B%A4%EB%AC%B4%EA%B5%90%EC%9C%A1-Vue</guid>
-    <description> Frontend .</description>
-    <pubDate>Thu, 17 Apr 2025 07:31:41 GMT</pubDate>
+    <title>실무교육 Spring, JSP</title>
+    <link>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EC%8B%A4%EB%AC%B4%EA%B5%90%EC%9C%A1-Spring,-JSP/%EC%8B%A4%EB%AC%B4%EA%B5%90%EC%9C%A1-Spring,-JSP</link>
+    <guid>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EC%8B%A4%EB%AC%B4%EA%B5%90%EC%9C%A1-Spring,-JSP/%EC%8B%A4%EB%AC%B4%EA%B5%90%EC%9C%A1-Spring,-JSP</guid>
+    <description> Backend .</description>
+    <pubDate>Thu, 05 Jun 2025 07:07:06 GMT</pubDate>
   </item><item>
-    <title>화살표 함수와 함수 선언문의 차이</title>
-    <link>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EC%8B%A4%EB%AC%B4%EA%B5%90%EC%9C%A1-Vue/Frontend/%ED%99%94%EC%82%B4%ED%91%9C-%ED%95%A8%EC%88%98%EC%99%80-%ED%95%A8%EC%88%98-%EC%84%A0%EC%96%B8%EB%AC%B8%EC%9D%98-%EC%B0%A8%EC%9D%B4</link>
-    <guid>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EC%8B%A4%EB%AC%B4%EA%B5%90%EC%9C%A1-Vue/Frontend/%ED%99%94%EC%82%B4%ED%91%9C-%ED%95%A8%EC%88%98%EC%99%80-%ED%95%A8%EC%88%98-%EC%84%A0%EC%96%B8%EB%AC%B8%EC%9D%98-%EC%B0%A8%EC%9D%B4</guid>
-    <description>문제 발생 공지 사항 모달 창에서 처음에는 이미지가 잘 보이는데 모달을 닫고 다시 모달을 열면 모달이 다시 안켜지는 버그가 발생했다.</description>
-    <pubDate>Thu, 17 Apr 2025 07:26:33 GMT</pubDate>
+    <title>Backend</title>
+    <link>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EC%8B%A4%EB%AC%B4%EA%B5%90%EC%9C%A1-Spring,-JSP/Backend/Backend</link>
+    <guid>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EC%8B%A4%EB%AC%B4%EA%B5%90%EC%9C%A1-Spring,-JSP/Backend/Backend</guid>
+    <description> File키워드ClassCastExceptionTVET-Spring-Issue-back.</description>
+    <pubDate>Thu, 05 Jun 2025 07:07:06 GMT</pubDate>
   </item><item>
-    <title>05. Vue의 상태관리</title>
-    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Vue.js-%EC%8B%A4%EB%AC%B4-%EA%B5%90%EC%9C%A1/05.-Vue%EC%9D%98-%EC%83%81%ED%83%9C%EA%B4%80%EB%A6%AC</link>
-    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/Vue.js-%EC%8B%A4%EB%AC%B4-%EA%B5%90%EC%9C%A1/05.-Vue%EC%9D%98-%EC%83%81%ED%83%9C%EA%B4%80%EB%A6%AC</guid>
-    <description>useMutation useMutation은 Vue Query(@tanstack/vue-query)에서 서버의 데이터를 “변경”하는 작업(생성, 수정, 삭제 등)에 사용하는 컴포저블 함수입니다.</description>
-    <pubDate>Thu, 17 Apr 2025 06:12:19 GMT</pubDate>
+    <title>ClassCastException</title>
+    <link>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EC%8B%A4%EB%AC%B4%EA%B5%90%EC%9C%A1-Spring,-JSP/Backend/ClassCastException</link>
+    <guid>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%EC%8B%A4%EB%AC%B4%EA%B5%90%EC%9C%A1-Spring,-JSP/Backend/ClassCastException</guid>
+    <description>문제 발생 Error updating database.</description>
+    <pubDate>Sat, 31 May 2025 14:32:46 GMT</pubDate>
   </item><item>
-    <title>02. 스프링 핵심 원리 이해 1</title>
-    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC---%EA%B8%B0%EB%B3%B8%ED%8E%B8/02.-%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EC%9D%B4%ED%95%B4-1</link>
-    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC---%EA%B8%B0%EB%B3%B8%ED%8E%B8/02.-%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EC%9D%B4%ED%95%B4-1</guid>
-    <description> 비즈니스 요구사항과 설계 클라이언트의 요구사항은 개발 시작 전까지 완전히 정해져 있지 않은 경우들이 있다. 그렇다고 요구사항이 완전히 정해질 때까지 개발을 손놓을 수는 없는 법이다. 최악의 경우에는 서비스 시작이 임박했을 때 정해지는 요구사항들도 있을 것이다.</description>
-    <pubDate>Wed, 16 Apr 2025 07:09:21 GMT</pubDate>
+    <title>04. SVN 재연결 방법</title>
+    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81,-JSP-%EC%8B%A4%EB%AC%B4-%EA%B5%90%EC%9C%A1/04.-SVN-%EC%9E%AC%EC%97%B0%EA%B2%B0-%EB%B0%A9%EB%B2%95</link>
+    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81,-JSP-%EC%8B%A4%EB%AC%B4-%EA%B5%90%EC%9C%A1/04.-SVN-%EC%9E%AC%EC%97%B0%EA%B2%B0-%EB%B0%A9%EB%B2%95</guid>
+    <description>SVN 연결만 다시 하는 방법 (Eclipse 기준) 프로젝트 우클릭 → Team → Share Project… 클릭 프로젝트 탐색기(Project Explorer)에서 연결이 끊긴 프로젝트를 우클릭 Team 메뉴에서 Share Project...를 선택 SVN 선택 후 Next SCM(형상관리) 도구 선택 화면에서 SVN을 선택하고 Next를 클릭 기존 SVN 저장소 정보 선택 “Use existing repository location”을 선택 이미 저장소 정보가 있다면 리스트에서 선택하고, 없다면 Create Location ...</description>
+    <pubDate>Wed, 14 May 2025 08:30:11 GMT</pubDate>
   </item><item>
-    <title>07. AOP</title>
-    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8/07.-AOP</link>
-    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8/07.-AOP</guid>
-    <description>AOP(관점 지향 프로그래밍)란? AOP는 핵심 비즈니스 로직과 부가적인 관심사(공통 기능, 예: 로깅, 트랜잭션, 보안 등)를 분리하여 개발할 수 있게 해주는 프로그래밍 패러다임입니다.</description>
-    <pubDate>Wed, 16 Apr 2025 04:44:45 GMT</pubDate>
+    <title>03. jQuery 문법</title>
+    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81,-JSP-%EC%8B%A4%EB%AC%B4-%EA%B5%90%EC%9C%A1/03.-jQuery-%EB%AC%B8%EB%B2%95</link>
+    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81,-JSP-%EC%8B%A4%EB%AC%B4-%EA%B5%90%EC%9C%A1/03.-jQuery-%EB%AC%B8%EB%B2%95</guid>
+    <description>$(function(){ noticeSearch(); registerEventListener(); }); // 실행할 이벤트를 여기에 넣는다 function registerEventListener() { $(&quot;#searchBtn&quot;).click(function(e){ // 기존에 있는 a태그의 속성을 없앤다.</description>
+    <pubDate>Fri, 09 May 2025 07:50:07 GMT</pubDate>
   </item><item>
-    <title>06. 스프링 DB 접근 기술</title>
-    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8/06.-%EC%8A%A4%ED%94%84%EB%A7%81-DB-%EC%A0%91%EA%B7%BC-%EA%B8%B0%EC%88%A0</link>
-    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8/06.-%EC%8A%A4%ED%94%84%EB%A7%81-DB-%EC%A0%91%EA%B7%BC-%EA%B8%B0%EC%88%A0</guid>
-    <description>Spring JDBC JdbcTemplate JdbcTemplate은 Spring JDBC의 핵심 클래스입니다. JDBC의 반복적인 자원 관리(커넥션, Statement, ResultSet 등)를 자동으로 처리해주고, SQL 실행과 예외 처리를 간소화합니다.</description>
-    <pubDate>Wed, 16 Apr 2025 03:02:57 GMT</pubDate>
+    <title>01. Ajax</title>
+    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81,-JSP-%EC%8B%A4%EB%AC%B4-%EA%B5%90%EC%9C%A1/01.-Ajax</link>
+    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81,-JSP-%EC%8B%A4%EB%AC%B4-%EA%B5%90%EC%9C%A1/01.-Ajax</guid>
+    <description>&lt;script type=&quot;text/javascript&quot;&gt; $(function(){ noticeSearch(); }); function noticeSearch(){ // 공지사항 데이터를 불러오는 함수 // 데이터를 불러오기 위해서는 // 1-1.</description>
+    <pubDate>Fri, 09 May 2025 07:18:51 GMT</pubDate>
   </item><item>
-    <title>05. 웹 MVC 개발</title>
-    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8/05.-%EC%9B%B9-MVC-%EA%B0%9C%EB%B0%9C</link>
-    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8/05.-%EC%9B%B9-MVC-%EA%B0%9C%EB%B0%9C</guid>
-    <description>@Controller public class MemberController { private final MemberService memberService; @Autowired public MemberController(MemberService memberService) { this.memberService = memberService; } @GetMapping(&quot;/members/new&quot;) public String createForm() { return &quot;members/createMemberForm&quot...</description>
-    <pubDate>Tue, 15 Apr 2025 06:41:50 GMT</pubDate>
+    <title>02. Mapper</title>
+    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81,-JSP-%EC%8B%A4%EB%AC%B4-%EA%B5%90%EC%9C%A1/02.-Mapper</link>
+    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81,-JSP-%EC%8B%A4%EB%AC%B4-%EA%B5%90%EC%9C%A1/02.-Mapper</guid>
+    <description>&lt;mapper namespace=&quot;kr.happyjob.study.system.dao.NoticeDao&quot;&gt; &lt;select id = &quot;noticeList&quot; resultType=&quot;kr.happyjob.study.system.model.NoticeModel&quot;&gt; SELECT notice_id as noticeId , loginID as loginId , notice_title as noticeTitle , notice_content as noticeContent ,...</description>
+    <pubDate>Fri, 09 May 2025 07:18:48 GMT</pubDate>
   </item><item>
-    <title>04. 스프링 빈과 의존관계</title>
-    <link>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8/04.-%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B9%88%EA%B3%BC-%EC%9D%98%EC%A1%B4%EA%B4%80%EA%B3%84</link>
-    <guid>https://quartz.jzhao.xyz/%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8/04.-%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B9%88%EA%B3%BC-%EC%9D%98%EC%A1%B4%EA%B4%80%EA%B3%84</guid>
-    <description> 스프링 빈은 스프링 컨테이너에 의해 관리되는 자바 객체로, 재사용 가능한 소프트웨어 컴포넌트를 의미하며, 주로 싱글톤 스코프로 생성된다.</description>
-    <pubDate>Mon, 14 Apr 2025 03:35:34 GMT</pubDate>
+    <title>API 요청을 두 번씩 하는 문제 발생</title>
+    <link>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%ED%88%AC%EB%91%90%EB%93%B1%EC%9E%A5/Frontend/note/API-%EC%9A%94%EC%B2%AD%EC%9D%84-%EB%91%90-%EB%B2%88%EC%94%A9-%ED%95%98%EB%8A%94-%EB%AC%B8%EC%A0%9C-%EB%B0%9C%EC%83%9D</link>
+    <guid>https://quartz.jzhao.xyz/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%B3%84-Issue/%ED%88%AC%EB%91%90%EB%93%B1%EC%9E%A5/Frontend/note/API-%EC%9A%94%EC%B2%AD%EC%9D%84-%EB%91%90-%EB%B2%88%EC%94%A9-%ED%95%98%EB%8A%94-%EB%AC%B8%EC%A0%9C-%EB%B0%9C%EC%83%9D</guid>
+    <description> 문제 발생 API 요청을 모두 두 번씩 하는 버그를 발견하였다. 해결 과정 우선 코드를 전체적으로 살펴보았지만, 마운트 시 한번 실행하도록 useEffect를 사용 하였기 때문에 문제가 없어보였지만 여전히 두번의 API 요청을 하고 있었다.</description>
+    <pubDate>Wed, 07 May 2025 07:07:48 GMT</pubDate>
   </item>
     </channel>
   </rss>
